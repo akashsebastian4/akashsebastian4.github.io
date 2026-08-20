@@ -809,7 +809,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
             <span class="err-msg">Enter a valid email.</span>
           </div>
           <div class="field" data-mmp="phone">
-            <label for="f-phone">Phone <span class="req">*</span></label>
+            <label for="f-phone">Phone <span class="req">*</span> <span class="hint">+91 added automatically</span></label>
             <input class="inp" id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
             <span class="err-msg">Enter a valid phone number (10 digits for India).</span>
           </div>
@@ -853,13 +853,13 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
             <input class="inp" id="f-profiles" name="profiles" placeholder="hackerone.com/you, bugcrowd.com/you" inputmode="url" autocapitalize="none" spellcheck="false">
           </div>
           <div class="field" data-mmp="notable_work_published_publically">
-            <label for="f-notable">Notable public work <span class="hint">optional</span></label>
+            <label for="f-notable">Notable work (published publicly) <span class="hint">optional</span></label>
             <textarea class="inp" id="f-notable" name="notable" placeholder="Writeups, CVEs, talks, advisories."></textarea>
           </div>
         </div>
         <div class="grid2">
           <div class="field" data-mmp="have_you_ever_reported_bugvulnerability_to_juspay_vulnerability_disclosure_program_vdp_">
-            <label>Reported to Juspay VDP before? <span class="req">*</span></label>
+            <label>Ever reported a bug to Juspay&#39;s VDP? <span class="req">*</span></label>
             <div class="occ-row">
               <label class="occ-pill"><input type="radio" name="vdp" value="YES"><span>Yes</span></label>
               <label class="occ-pill"><input type="radio" name="vdp" value="NO"><span>No</span></label>
@@ -867,7 +867,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
             <span class="err-msg" style="margin-top:6px">Pick one.</span>
           </div>
           <div class="field" data-mmp="do_you_have_any_past_or_present_affiliation_with_juspay_employment_contract_work_internship_or_close_personal_connection_to_a_current_employee">
-            <label>Any Juspay affiliation? <span class="req">*</span></label>
+            <label>Past or present Juspay affiliation? <span class="req">*</span></label>
             <div class="occ-row">
               <label class="occ-pill"><input type="radio" name="affiliation" value="YES"><span>Yes</span></label>
               <label class="occ-pill"><input type="radio" name="affiliation" value="NO"><span>No</span></label>
