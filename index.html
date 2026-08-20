@@ -370,12 +370,13 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .nda-check input:checked ~ .box svg{opacity:1}
 .nda-check input:focus-visible ~ .box{box-shadow:0 0 0 3px var(--cobalt)}
 .field.bad .nda-check .box{border-color:var(--err);box-shadow:3px 3px 0 rgba(255,92,92,.5)}
-.file-pick{position:relative;display:flex;align-items:center;gap:12px;border:2px solid var(--ink);border-radius:var(--r);background:#fff;padding:9px 10px;cursor:pointer;transition:box-shadow .15s,border-color .15s}
+.file-pick{position:relative;display:inline-flex;align-items:center;gap:12px;cursor:pointer;max-width:100%}
 .file-pick input{position:absolute;inset:0;opacity:0;cursor:pointer;pointer-events:none}
-.file-pick:focus-within{border-color:var(--cobalt);box-shadow:4px 4px 0 var(--cobalt)}
-.file-btn{font-family:"Silkscreen",monospace;font-size:10px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:9px 12px;border-radius:var(--r);flex:none}
+.file-pick:focus-within .file-btn{box-shadow:0 0 0 3px var(--cobalt)}
+@media(hover:hover){.file-pick:hover .file-btn{background:var(--cobalt)}}
+.file-btn{font-family:"Silkscreen",monospace;font-size:10px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:10px 14px;border-radius:var(--r);flex:none;transition:background .15s,box-shadow .15s}
 .file-name{font-family:"JetBrains Mono",monospace;font-size:12px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.field.bad .file-pick{border-color:var(--err);box-shadow:4px 4px 0 rgba(255,92,92,.5)}
+.field.bad .file-btn{box-shadow:0 0 0 3px rgba(255,92,92,.55)}
 .form-status{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--err);text-align:center;margin:2px 0 0;line-height:1.6}
 .form-status a{color:var(--err);font-weight:700}
 
@@ -502,7 +503,6 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .form-nav{margin-top:12px}
   textarea.inp{min-height:42px}
   .occ-pill span{padding:8px 12px;font-size:13px}
-  .file-pick{padding:6px 8px}
   .file-btn{padding:7px 10px}
   .pool{padding:14px 20px}
   .fact-ic{width:38px;height:38px}
