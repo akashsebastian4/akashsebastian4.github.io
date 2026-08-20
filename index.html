@@ -28,7 +28,7 @@
   --err:#FF5C5C;
   --r:2px;
   --shadow-hard:8px 8px 0 var(--ink);
-  --maxw:1320px;
+  --maxw:1440px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 
@@ -505,6 +505,10 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .hero-sub .chip-yellow{font-size:clamp(15px,1.5vw,20px)}
   .pool{margin-top:40px}
   .hero-right .console{margin:0}
+  .hero{padding-bottom:56px}
+  .hero-bottom{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:32px 48px;flex-wrap:wrap}
+  .hero-bottom .pool{margin-top:0;flex:1 1 480px}
+  .hero-bottom .facts{margin-top:0}
   #register{display:none}
   .scroll-hint{display:none}
 }
@@ -573,6 +577,10 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
       <a href="#arena" class="btn-ghost">// what's the arena?</a>
     </div>
 
+
+   </div>
+   <div class="hero-right" id="heroForm"></div>
+   <div class="hero-bottom">
     <div class="pool">
       <div class="amt"><small>TOTAL BOUNTY POOL</small>₹3,50,000</div>
       <div class="meta">30 HACKERS<br>24 HOURS<br><b>1 LIVE TARGET</b></div>
@@ -595,7 +603,6 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 
     <div class="scroll-hint"><span class="bar"></span> SCROLL TO ENTER</div>
    </div>
-   <div class="hero-right" id="heroForm"></div>
   </div>
 </header>
 
