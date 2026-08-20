@@ -82,7 +82,7 @@ img{max-width:100%}
 .nav-brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.01em}
 .jp-logo{display:block;color:var(--ink)}
 .jp-logo-nav{width:81px;height:25px}
-.jp-logo-hero{width:146px;height:45px;margin-bottom:30px}
+.jp-logo-hero{width:clamp(146px,10.5vw,200px);height:auto;aspect-ratio:702/216;margin-bottom:30px}
 .jp-logo-foot{width:112px;height:34px;color:#fff}
 .nav-brand small{font-family:"Silkscreen",monospace;font-size:11px;color:var(--cobalt);letter-spacing:.05em}
 .nav-right{display:flex;align-items:center;gap:16px}
@@ -766,7 +766,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
     </div>
     <div class="faq">
       <details class="q rise"><summary>Is this remote or on-site? <span class="pm">+</span></summary><div class="a">Strictly on-site at Juspay's office in Bengaluru. The whole point is a live room — researchers, triagers, and the target in one place for 24 hours. Selected hackers get the exact address after confirmation.</div></details>
-      <details class="q rise"><summary>Does it cost anything to enter? <span class="pm">+</span></summary><div class="a">No. Registration is free. Meals and workstations are covered on-site, and shortlisted researchers travelling to Bengaluru can request travel support during registration.</div></details>
+      <details class="q rise"><summary>Does it cost anything to enter? <span class="pm">+</span></summary><div class="a">No. Registration is free. Meals and workstations are covered on-site.</div></details>
       <details class="q rise"><summary>How are the 30 spots picked? <span class="pm">+</span></summary><div class="a">Our security team reviews every application — bounty track record, disclosed work, and the surfaces you hunt. Handles with public, reproducible impact stand out. It's curated, not first-come.</div></details>
       <details class="q rise"><summary>How is the ₹3,50,000 split? <span class="pm">+</span></summary><div class="a">Top three placements take fixed prizes, and a severity + first-blood pool rewards the highest-impact and earliest valid findings. Full rules of engagement and reward tables are shared with selected hackers.</div></details>
       <details class="q rise"><summary>What do I need to bring? <span class="pm">+</span></summary><div class="a">Your laptop, your toolkit, and a government ID for entry. Power, network, and caffeine are on us. Test credentials and scope are handed out at kickoff.</div></details>
