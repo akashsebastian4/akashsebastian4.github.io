@@ -362,6 +362,15 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .occ-pill input:checked + span::before{background:var(--yellow);border-color:#fff}
 .occ-pill input:focus-visible + span{box-shadow:0 0 0 3px var(--yellow)}
 @media(hover:hover){.occ-pill:hover span{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--cobalt)}}
+.occ-pill.sq span::before{border-radius:0}
+.file-pick{position:relative;display:flex;align-items:center;gap:12px;border:2px solid var(--ink);border-radius:var(--r);background:#fff;padding:9px 10px;cursor:pointer;transition:box-shadow .15s,border-color .15s}
+.file-pick input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.file-pick:focus-within{border-color:var(--cobalt);box-shadow:4px 4px 0 var(--cobalt)}
+.file-btn{font-family:"Silkscreen",monospace;font-size:10px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:9px 12px;border-radius:var(--r);flex:none}
+.file-name{font-family:"JetBrains Mono",monospace;font-size:12px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.field.bad .file-pick{border-color:var(--err);box-shadow:4px 4px 0 rgba(255,92,92,.5)}
+.form-status{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--err);text-align:center;margin:2px 0 0;line-height:1.6}
+.form-status a{color:var(--err);font-weight:700}
 
 /* nav buttons */
 .form-nav{display:flex;justify-content:space-between;gap:14px;margin-top:16px}
@@ -454,10 +463,10 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .hero-bottom .facts{margin-top:0;flex:1;justify-content:space-between}
   #register{display:none}
   .scroll-hint{display:none}
-  .reg-below{display:none}
-  .reg-beside{display:inline}
-  .console-closed .reg-below{display:inline}
-  .console-closed .reg-beside{display:none}
+  .hero-lead .reg-below{display:none}
+  .hero-lead .reg-beside{display:inline}
+  .console-closed .hero-lead .reg-below{display:inline}
+  .console-closed .hero-lead .reg-beside{display:none}
   .console-closed .hero .wrap{grid-template-columns:1fr;justify-items:center;text-align:center}
   .console-closed .hero-left{max-width:860px;animation:reflowIn .4s var(--ease)}
   .console-closed .hero-right{display:none}
@@ -471,7 +480,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .console-closed .scroll-hint{display:flex;width:100%;justify-content:center;margin-top:10px}
   .console-closed .hero-bottom{justify-content:space-between;text-align:left}
 }
-@media(min-width:1100px) and (max-height:880px){
+@media(min-width:1100px) and (max-height:960px){
   .jp-logo-hero{margin-bottom:18px}
   .hero-tag{margin-bottom:16px}
   .title{font-size:clamp(38px,4.4vw,64px)}
@@ -484,6 +493,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .field{margin-bottom:10px}
   .inp{padding:10px 12px}
   .form-nav{margin-top:12px}
+  textarea.inp{min-height:60px}
   .pool{padding:14px 20px}
   .fact-ic{width:38px;height:38px}
 }
@@ -563,7 +573,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
       <span class="chip-yellow">24 HOURS</span>
     </div>
 
-    <p class="hero-lead">A 24-hour, on-site adversarial event at Juspay HQ. Thirty of the sharpest security researchers, one live target surface, and a ₹3,50,000 pool on the table. <span class="reg-below">Register below</span><span class="reg-beside">Fill in the form</span> — selected hackers get the address, the rules of engagement, and their pass.</p>
+    <p class="hero-lead">A 24-hour, on-site adversarial event at Juspay HQ. Thirty of the sharpest security researchers, one live target surface, and a ₹3,50,000 pool on the table. <span class="reg-below">Register below</span><span class="reg-beside">Fill in the form</span>. Selected hackers get the address, the rules of engagement, and their pass.</p>
 
     <div class="hero-cta">
       <a href="#register" class="btn-primary">
@@ -675,68 +685,85 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
         <h3 class="step-title">Who's applying?</h3>
         <p class="step-desc">// the basics — this is how we'll reach you if you're in</p>
         <div class="grid2">
-          <div class="field">
+          <div class="field" data-mmp="name">
             <label for="f-name">Full name <span class="req">*</span></label>
             <input class="inp" id="f-name" name="name" placeholder="Ada Lovelace" autocomplete="name" required>
             <span class="err-msg">Enter your name.</span>
           </div>
-          <div class="field">
+          <div class="field" data-mmp="email">
             <label for="f-email">Email <span class="req">*</span></label>
             <input class="inp" id="f-email" name="email" type="email" placeholder="you@domain.com" autocomplete="email" required>
             <span class="err-msg">Enter a valid email.</span>
           </div>
-          <div class="field">
+          <div class="field" data-mmp="phone">
             <label for="f-phone">Phone <span class="req">*</span></label>
             <input class="inp" id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
             <span class="err-msg">Enter a contact number.</span>
           </div>
-          <div class="field">
-            <label for="f-city">Where are you based? <span class="req">*</span></label>
-            <input class="inp" id="f-city" name="city" placeholder="City, Country" required>
-            <span class="err-msg">Tell us your city.</span>
+          <div class="field" data-mmp="years_of_security_research_experience">
+            <label for="f-years">Years of security research <span class="req">*</span></label>
+            <input class="inp" id="f-years" name="years" type="number" min="0" max="60" step="1" inputmode="numeric" placeholder="3" required>
+            <span class="err-msg">How many years?</span>
           </div>
         </div>
-        <div class="field">
-          <label>You are <span class="req">*</span></label>
+        <div class="field" data-mmp="current_professional_role">
+          <label>Current professional role <span class="req">*</span></label>
           <div class="occ-row" id="occ">
             <label class="occ-pill"><input type="radio" name="occupation" value="Student"><span>Student</span></label>
-            <label class="occ-pill"><input type="radio" name="occupation" value="Professional"><span>Professional</span></label>
+            <label class="occ-pill"><input type="radio" name="occupation" value="Working professional"><span>Working professional</span></label>
             <label class="occ-pill"><input type="radio" name="occupation" value="Full-time bug hunter"><span>Full-time bug hunter</span></label>
           </div>
           <span class="err-msg" style="margin-top:6px">Pick one.</span>
         </div>
-        <div class="grid2" id="extraStudent" hidden>
-          <div class="field col-2">
-            <label for="f-college">College / school name <span class="req">*</span></label>
-            <input class="inp" id="f-college" name="college" placeholder="Your college or school" required>
-            <span class="err-msg">Enter your college or school.</span>
-          </div>
+        <div class="field" data-mmp="latest_resume">
+          <label for="f-resume">Latest resume <span class="req">*</span></label>
+          <label class="file-pick">
+            <input type="file" id="f-resume" name="resume" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" required>
+            <span class="file-btn">CHOOSE FILE</span>
+            <span class="file-name" id="resumeName">No file selected</span>
+          </label>
+          <span class="err-msg">Attach your resume.</span>
         </div>
-        <div class="grid2" id="extraPro" hidden>
-          <div class="field">
-            <label for="f-company">Company name <span class="req">*</span></label>
-            <input class="inp" id="f-company" name="company" placeholder="Where you work" required>
-            <span class="err-msg">Enter your company.</span>
+        <div class="grid2">
+          <div class="field" data-mmp="notable_work_published_publically">
+            <label for="f-notable">Notable public work <span class="req">*</span></label>
+            <textarea class="inp" id="f-notable" name="notable" placeholder="Writeups, CVEs, talks, advisories — links welcome." required></textarea>
+            <span class="err-msg">Tell us about your work.</span>
           </div>
-          <div class="field">
-            <label for="f-designation">Designation <span class="req">*</span></label>
-            <input class="inp" id="f-designation" name="designation" placeholder="Security Engineer" required>
-            <span class="err-msg">Enter your designation.</span>
+          <div class="field" data-mmp="how_did_you_hear_about_this_event">
+            <label for="f-hear">How did you hear about this? <span class="req">*</span></label>
+            <input class="inp" id="f-hear" name="hear" placeholder="Friend, social, community…" required>
+            <span class="err-msg">Let us know.</span>
           </div>
         </div>
         <div class="grid2">
-          <div class="field">
-            <label for="f-h1">HackerOne handle <span class="hint">optional</span></label>
-            <input class="inp" id="f-h1" name="hackerone" placeholder="hackerone.com/yourname" inputmode="url" autocapitalize="none" spellcheck="false">
+          <div class="field" data-mmp="have_you_ever_reported_bugvulnerability_to_juspay_vulnerability_disclosure_program_vdp_">
+            <label>Reported to Juspay&#39;s VDP before? <span class="req">*</span></label>
+            <div class="occ-row">
+              <label class="occ-pill"><input type="radio" name="vdp" value="YES"><span>Yes</span></label>
+              <label class="occ-pill"><input type="radio" name="vdp" value="NO"><span>No</span></label>
+            </div>
+            <span class="err-msg" style="margin-top:6px">Pick one.</span>
           </div>
-          <div class="field">
-            <label for="f-bc">Bugcrowd handle <span class="hint">optional</span></label>
-            <input class="inp" id="f-bc" name="bugcrowd" placeholder="bugcrowd.com/yourname" inputmode="url" autocapitalize="none" spellcheck="false">
+          <div class="field" data-mmp="do_you_have_any_past_or_present_affiliation_with_juspay_employment_contract_work_internship_or_close_personal_connection_to_a_current_employee">
+            <label>Any Juspay affiliation? <span class="req">*</span> <span class="hint">work, internship, close connection</span></label>
+            <div class="occ-row">
+              <label class="occ-pill"><input type="radio" name="affiliation" value="YES"><span>Yes</span></label>
+              <label class="occ-pill"><input type="radio" name="affiliation" value="NO"><span>No</span></label>
+            </div>
+            <span class="err-msg" style="margin-top:6px">Pick one.</span>
           </div>
         </div>
+        <div class="field" data-mmp="agree_to_rules_of_engagement__nda">
+          <div class="occ-row">
+            <label class="occ-pill sq"><input type="checkbox" name="nda"><span>I agree to the rules of engagement &amp; NDA</span></label>
+          </div>
+          <span class="err-msg" style="margin-top:6px">You must agree to the rules of engagement &amp; NDA.</span>
+        </div>
+        <p class="form-status" id="formStatus" hidden></p>
         <div class="form-nav" style="justify-content:center">
           <button type="submit" class="btn-step next" id="btnSubmit">
-            Submit application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+            <span id="btnLabel">Submit application</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
           </button>
         </div>
       </form>
@@ -890,38 +917,90 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   }
   tick(); setInterval(tick,1000);
 
-  var exStu=document.getElementById('extraStudent');
-  var exPro=document.getElementById('extraPro');
+  var occField=document.getElementById('occ').closest('.field');
   document.querySelectorAll('#occ input[name=occupation]').forEach(function(r){
-    r.addEventListener('change', function(){
-      document.getElementById('occ').closest('.field').classList.remove('bad');
-      exStu.hidden=(r.value!=='Student');
-      exPro.hidden=(r.value!=='Professional');
-    });
+    r.addEventListener('change', function(){ occField.classList.remove('bad'); });
+  });
+  var resumeInput=document.getElementById('f-resume');
+  var resumeName=document.getElementById('resumeName');
+  resumeInput.addEventListener('change', function(){
+    resumeName.textContent=resumeInput.files.length?resumeInput.files[0].name:'No file selected';
+    if(resumeInput.files.length) resumeInput.closest('.field').classList.remove('bad');
+  });
+  document.querySelectorAll('input[name=vdp],input[name=affiliation],input[name=nda]').forEach(function(r){
+    r.addEventListener('change', function(){ r.closest('.field').classList.remove('bad'); });
   });
 
-    var form=document.getElementById('regform');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
+  var API='https://api.makemypass.com/makemypass/public-form/711d18dc-390c-4586-aee1-7fcd365eb8b8/submit/';
+  var TICKET='{"ticket_id":"6e28f507-4c46-4d29-9781-26df159ff7d0","count":1,"my_ticket":true}';
+  var form=document.getElementById('regform');
+  var statusEl=document.getElementById('formStatus');
+  var btnSubmit=document.getElementById('btnSubmit');
+  var btnLabel=document.getElementById('btnLabel');
+  function fieldVal(n){ var el=form.querySelector('[name='+n+']'); return el?el.value.trim():''; }
+  function groupVal(n){ var c=form.querySelector('input[name='+n+']:checked'); return c?c.value:''; }
+  function validate(){
     var ok=true;
-    form.querySelectorAll('input[required]').forEach(function(inp){
-      if(inp.closest('[hidden]')) return;
-      var f=inp.closest('.field'), v=inp.value.trim();
-      var good=v&&(inp.type!=='email'||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));
+    form.querySelectorAll('input[required],textarea[required]').forEach(function(inp){
+      if(inp.type==='radio'||inp.type==='checkbox') return;
+      var f=inp.closest('.field'), good;
+      if(inp.type==='file'){ good=inp.files.length>0; }
+      else { var v=inp.value.trim(); good=v&&(inp.type!=='email'||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)); }
       if(!good){ f.classList.add('bad'); ok=false; } else { f.classList.remove('bad'); }
     });
-    var occ=document.querySelector('input[name=occupation]:checked');
-    var occField=document.getElementById('occ').closest('.field');
-    if(!occ){ occField.classList.add('bad'); ok=false; } else { occField.classList.remove('bad'); }
-    if(!ok) return;
-    var ref='LBB-'+Math.abs(hashCode(Date.now()+''+Math.floor(performance.now()))).toString(36).toUpperCase().slice(0,6);
-    document.getElementById('tk-name').textContent=document.querySelector('[name=name]').value.trim()||'—';
-    document.getElementById('tk-ref').textContent=ref;
-    form.style.display='none';
-    document.getElementById('crumb').textContent='submitted';
-    document.getElementById('success').classList.add('show');
-    burst();
-    scrollToConsole();
+    ['occupation','vdp','affiliation'].forEach(function(n){
+      var first=form.querySelector('input[name='+n+']');
+      var f=first.closest('.field');
+      if(!form.querySelector('input[name='+n+']:checked')){ f.classList.add('bad'); ok=false; } else { f.classList.remove('bad'); }
+    });
+    var nda=form.querySelector('input[name=nda]');
+    var ndaField=nda.closest('.field');
+    if(!nda.checked){ ndaField.classList.add('bad'); ok=false; } else { ndaField.classList.remove('bad'); }
+    return ok;
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    statusEl.hidden=true;
+    if(!validate()){ statusEl.innerHTML='Fix the highlighted fields and try again.'; statusEl.hidden=false; return; }
+    btnSubmit.disabled=true; btnLabel.textContent='Submitting…';
+    var fd=new FormData();
+    fd.append('name', fieldVal('name'));
+    fd.append('phone', fieldVal('phone'));
+    fd.append('email', fieldVal('email'));
+    fd.append('years_of_security_research_experience', fieldVal('years'));
+    fd.append('current_professional_role', groupVal('occupation'));
+    fd.append('latest_resume[]', resumeInput.files[0]);
+    fd.append('notable_work_published_publically', fieldVal('notable'));
+    fd.append('how_did_you_hear_about_this_event', fieldVal('hear'));
+    fd.append('have_you_ever_reported_bugvulnerability_to_juspay_vulnerability_disclosure_program_vdp_', groupVal('vdp'));
+    fd.append('do_you_have_any_past_or_present_affiliation_with_juspay_employment_contract_work_internship_or_close_personal_connection_to_a_current_employee', groupVal('affiliation'));
+    fd.append('agree_to_rules_of_engagement__nda[]', 'YES');
+    fd.append('__tickets[]', TICKET);
+    fetch(API,{method:'POST',body:fd}).then(function(r){
+      return r.json().then(function(j){ return {ok:r.ok&&!j.hasError, body:j}; }, function(){ return {ok:r.ok, body:null}; });
+    }).then(function(res){
+      if(!res.ok){ var err=new Error('rejected'); err.body=res.body; throw err; }
+      var ref='LBB-'+Math.abs(hashCode(Date.now()+''+Math.floor(performance.now()))).toString(36).toUpperCase().slice(0,6);
+      document.getElementById('tk-name').textContent=fieldVal('name')||'—';
+      document.getElementById('tk-ref').textContent=ref;
+      form.style.display='none';
+      document.getElementById('crumb').textContent='submitted';
+      document.getElementById('success').classList.add('show');
+      burst();
+      scrollToConsole();
+    }).catch(function(err){
+      btnSubmit.disabled=false; btnLabel.textContent='Submit application';
+      var mail=' If it keeps failing, email us at <a href="mailto:bugbounty@juspay.in">bugbounty@juspay.in</a> and we will register you.';
+      var msg='Submission failed. Check your connection and try again.'+mail;
+      if(err&&err.body&&err.body.message&&typeof err.body.message==='object'){
+        Object.keys(err.body.message).forEach(function(k){
+          var f=form.querySelector('[data-mmp="'+k+'"]');
+          if(f) f.classList.add('bad');
+        });
+        msg='The server rejected some fields. Fix the highlighted ones and try again.'+mail;
+      }
+      statusEl.innerHTML=msg; statusEl.hidden=false;
+    });
   });
   function hashCode(s){var h=0;for(var i=0;i<s.length;i++){h=(h<<5)-h+s.charCodeAt(i);h|=0;}return h;}
 
