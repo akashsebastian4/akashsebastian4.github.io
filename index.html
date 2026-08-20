@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="canonical" href="https://akashsebastian4.github.io/">
+<meta name="description" content="Juspay's Live Bug Bounty: a 24-hour on-site hacking event in Bengaluru, 12-13 September 2026. 30 security researchers, one live target, ₹3,50,000 bounty pool. Register by 4 September.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juspay Live Bug Bounty">
+<meta property="og:title" content="Juspay Live Bug Bounty 2026 — Bengaluru">
+<meta property="og:description" content="Juspay's Live Bug Bounty: a 24-hour on-site hacking event in Bengaluru, 12-13 September 2026. 30 security researchers, one live target, ₹3,50,000 bounty pool. Register by 4 September.">
+<meta property="og:url" content="https://akashsebastian4.github.io/">
+<meta property="og:image" content="https://akashsebastian4.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Live Bug Bounty - 30 hackers, 24 hours, ₹3,50,000 pool - 12-13 September 2026, Bengaluru">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Juspay Live Bug Bounty 2026 — Bengaluru">
+<meta name="twitter:description" content="Juspay's Live Bug Bounty: a 24-hour on-site hacking event in Bengaluru, 12-13 September 2026. 30 security researchers, one live target, ₹3,50,000 bounty pool. Register by 4 September.">
+<meta name="twitter:image" content="https://akashsebastian4.github.io/og-image.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Event",
+ "name": "Juspay Live Bug Bounty 2026",
+ "description": "Juspay's Live Bug Bounty: a 24-hour on-site hacking event in Bengaluru, 12-13 September 2026. 30 security researchers, one live target, ₹3,50,000 bounty pool. Register by 4 September.",
+ "startDate": "2026-09-12",
+ "endDate": "2026-09-13",
+ "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+ "eventStatus": "https://schema.org/EventScheduled",
+ "location": {
+  "@type": "Place",
+  "name": "Juspay Office",
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Bengaluru",
+   "addressCountry": "IN"
+  }
+ },
+ "image": [
+  "https://akashsebastian4.github.io/og-image.png"
+ ],
+ "organizer": {
+  "@type": "Organization",
+  "name": "Juspay",
+  "url": "https://juspay.io"
+ },
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "INR",
+  "availability": "https://schema.org/InStock",
+  "url": "https://akashsebastian4.github.io/",
+  "validFrom": "2026-08-20",
+  "validThrough": "2026-09-04"
+ },
+ "url": "https://akashsebastian4.github.io/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Is this remote or on-site?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Strictly on-site at Juspay's office in Bengaluru. The whole point is a live room — researchers, triagers, and the target in one place for 24 hours. Selected hackers get the exact address after confirmation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it cost anything to enter?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Registration is free. Meals and workstations are covered on-site."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How are the 30 spots picked?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Our security team reviews every application — bounty track record, disclosed work, and the surfaces you hunt. Handles with public, reproducible impact stand out. It's curated, not first-come."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How is the ₹3,50,000 split?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Top three placements take fixed prizes, and a severity + first-blood pool rewards the highest-impact and earliest valid findings. Full rules of engagement and reward tables are shared with selected hackers."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What do I need to bring?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Your laptop, your toolkit, and a government ID for entry. Power, network, and caffeine are on us. Test credentials and scope are handed out at kickoff."
+   }
+  }
+ ]
+}
+</script>
+<title>Juspay Live Bug Bounty 2026 — Register | Bengaluru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&family=Silkscreen&display=swap">
+
+<style>
+/* ============================================================
+   LIVE BUG BOUNTY — Researcher Registration
+   Committed single-theme identity derived from the poster.
+   ============================================================ */
+:root{
+  --cobalt:#2233E0;
+  --cobalt-deep:#151ea8;
+  --cobalt-darker:#0f1680;
+  --yellow:#F2E014;
+  --ink:#0A0A0A;
+  --paper:#FFFFFF;
+  --grey:#EAECF7;
+  --grey-line:rgba(255,255,255,.14);
+  --grey-line-dark:rgba(21,30,168,.14);
+  --ok:#25D07A;
+  --err:#FF5C5C;
+  --r:2px;
+  --shadow-hard:8px 8px 0 var(--ink);
+  --maxw:1440px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--yellow);color:var(--ink)}
+a{color:inherit}
+img{max-width:100%}
+
+/* ---- shared utility ---- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.mono{font-family:"JetBrains Mono",monospace}
+.pixel{font-family:"Silkscreen",monospace;letter-spacing:.02em}
+.eyebrow{
+  font-family:"Silkscreen",monospace;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cobalt);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:22px;height:10px;background:var(--yellow);display:inline-block;border:2px solid var(--ink)}
+.on-blue .eyebrow{color:#cdd3ff}
+.on-blue .eyebrow::before{border-color:#fff}
+
+/* ---- decorative pixels ---- */
+.pixel-square{position:absolute;background:var(--cobalt);image-rendering:pixelated}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px max(clamp(20px,5vw,48px),env(safe-area-inset-right)) 14px max(clamp(20px,5vw,48px),env(safe-area-inset-left));
+  background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:2px solid var(--ink);
+  transform:translateY(-102%);
+  transition:transform .5s var(--ease);
+}
+.nav.show{transform:translateY(0)}
+.nav-brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.01em}
+.jp-logo{display:block;color:var(--ink)}
+.jp-logo-nav{width:81px;height:25px}
+.jp-logo-hero{width:clamp(146px,10.5vw,200px);height:auto;aspect-ratio:702/216;margin-bottom:30px}
+.jp-logo-foot{width:112px;height:34px;color:#fff}
+.nav-brand small{font-family:"Silkscreen",monospace;font-size:11px;color:var(--cobalt);letter-spacing:.05em}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-count{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;
+  display:none;align-items:center;gap:8px;color:var(--cobalt-deep)}
+.nav-count b{background:var(--ink);color:var(--yellow);padding:3px 8px;border-radius:var(--r);font-variant-numeric:tabular-nums}
+@media(min-width:720px){.nav-count{display:flex}}
+.btn-mini{
+  font-family:"Silkscreen",monospace;font-size:12px;letter-spacing:.04em;
+  text-decoration:none;color:#fff;background:var(--ink);
+  padding:11px 16px;border:2px solid var(--ink);border-radius:var(--r);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .18s var(--ease),background .2s;
+}
+@media(hover:hover){.btn-mini:hover{background:var(--cobalt);transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}}
+.btn-mini .dot{width:16px;height:16px;border-radius:50%;background:var(--yellow);display:grid;place-items:center}
+.btn-mini .dot svg{width:9px;height:9px}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  padding:48px 0 90px;
+  background:
+    linear-gradient(180deg,#fff 0%,#fff 62%, #f2f3ff 100%);
+  overflow:hidden;
+  border-bottom:3px solid var(--ink);
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--grey-line-dark) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grey-line-dark) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(120% 90% at 70% 10%,#000 40%,transparent 85%);
+  opacity:.7;
+}
+.hero .wrap{position:relative;z-index:2}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:"Silkscreen",monospace;font-size:12px;letter-spacing:.12em;
+  color:var(--cobalt-deep);border:2px solid var(--ink);border-radius:var(--r);
+  padding:8px 12px;background:#fff;box-shadow:3px 3px 0 var(--cobalt);
+  margin-bottom:26px;
+}
+.hero-tag .blink{width:9px;height:9px;background:var(--ok);border-radius:50%;box-shadow:0 0 0 2px rgba(37,208,122,.3);animation:blink 1.4s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* the blocky 3D title */
+.title{
+  font-family:"Archivo Black",system-ui,sans-serif;
+  font-weight:400;
+  line-height:.86;
+  letter-spacing:-.01em;
+  text-transform:uppercase;
+  margin:0;
+  color:#fff;
+  -webkit-text-stroke:3px var(--cobalt-deep);
+  text-shadow:
+    3px 3px 0 var(--cobalt-deep),
+    6px 6px 0 var(--cobalt-deep),
+    9px 9px 0 var(--cobalt);
+  font-size:clamp(48px,11vw,132px);
+}
+.title .row{display:block;overflow:hidden}
+.title .row span{display:inline-block;transform:translateY(110%);}
+.reveal-in .title .row span{animation:dropIn .38s var(--ease) forwards}
+.reveal-in .title .row:nth-child(2) span{animation-delay:.06s}
+@keyframes dropIn{to{transform:translateY(0)}}
+
+.hero-sub{
+  display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 8px;align-items:center;
+}
+.chip-yellow{
+  font-family:"Archivo Black",sans-serif;font-size:clamp(16px,2.4vw,26px);
+  background:var(--yellow);color:var(--ink);
+  padding:8px 16px;border:2px solid var(--ink);border-radius:var(--r);
+  box-shadow:4px 4px 0 var(--ink);
+  opacity:0;transform:scale(.92) rotate(-2deg);
+}
+.reveal-in .chip-yellow{animation:pop .3s var(--ease) .16s forwards}
+.reveal-in .chip-yellow:nth-child(2){animation-delay:.24s}
+@keyframes pop{60%{transform:scale(1.03)}to{opacity:1;transform:scale(1) rotate(-1.5deg)}}
+
+.hero-lead{max-width:56ch;font-size:clamp(17px,2vw,20px);color:#333;margin:26px 0 34px;opacity:0;transform:translateY(10px)}
+.reveal-in .hero-lead{animation:fadeUp .35s .22s var(--ease) forwards}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;opacity:0;transform:translateY(10px)}
+.reveal-in .hero-cta{animation:fadeUp .35s .28s var(--ease) forwards}
+
+.btn-primary{
+  --bg:#fff;--fg:var(--ink);
+  cursor:pointer;text-decoration:none;
+  font-family:"Manrope",sans-serif;font-weight:800;font-size:18px;
+  background:var(--bg);color:var(--fg);
+  border:2.5px solid var(--ink);border-radius:var(--r);
+  padding:14px 18px 14px 24px;
+  display:inline-flex;align-items:center;gap:16px;
+  box-shadow:var(--shadow-hard);
+  transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .2s;
+}
+@media(hover:hover){.btn-primary:hover{transform:translate(-3px,-3px);box-shadow:12px 12px 0 var(--ink)}}
+.btn-primary:active{transform:translate(2px,2px);box-shadow:4px 4px 0 var(--ink)}
+.btn-primary .knob{
+  width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;
+  display:grid;place-items:center;transition:transform .4s var(--ease),background .2s;
+}
+@media(hover:hover){.btn-primary:hover .knob{transform:rotate(45deg);background:var(--cobalt)}}
+.btn-primary .knob svg{width:16px;height:16px}
+.btn-ghost{
+  text-decoration:none;font-weight:700;font-family:"JetBrains Mono",monospace;font-size:14px;
+  padding:14px 8px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;color:#333;
+}
+@media(hover:hover){.btn-ghost:hover{border-color:var(--cobalt);color:var(--cobalt)}}
+
+/* bounty pool box (poster signature) */
+.pool{
+  margin-top:56px;position:relative;
+  background:var(--ink);color:#fff;
+  border:3px solid var(--ink);border-radius:var(--r);
+  padding:22px 26px;max-width:640px;
+  box-shadow:10px 10px 0 var(--cobalt);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  opacity:0;transform:translateY(12px);
+}
+.reveal-in .pool{animation:fadeUp .35s .3s var(--ease) forwards}
+.pool::before,.pool::after{content:"";position:absolute;width:12px;height:12px;background:#fff;border:3px solid var(--ink)}
+.pool::before{top:-8px;left:-8px}
+.pool::after{bottom:-8px;right:-8px}
+.pool .amt{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:clamp(26px,4.4vw,40px);letter-spacing:-.01em}
+.pool .amt small{color:var(--yellow);font-size:.55em;display:block;letter-spacing:.16em;font-weight:500}
+.pool .meta{font-family:"Silkscreen",monospace;font-size:11px;line-height:1.9;color:#c9cdff;text-align:right}
+.pool .meta b{color:var(--yellow)}
+
+/* fact rows */
+.facts{display:flex;flex-wrap:wrap;gap:26px 40px;margin-top:34px}
+.fact{display:flex;align-items:center;gap:14px;opacity:0;transform:translateY(10px)}
+.reveal-in .fact{animation:fadeUp .35s var(--ease) forwards}
+.reveal-in .fact:nth-child(1){animation-delay:.32s}
+.reveal-in .fact:nth-child(2){animation-delay:.38s}
+.reveal-in .fact:nth-child(3){animation-delay:.44s}
+.fact-ic{width:44px;height:44px;flex:none;background:var(--cobalt);color:#fff;border:2px solid var(--ink);border-radius:var(--r);display:grid;place-items:center;box-shadow:3px 3px 0 var(--ink)}
+.fact-ic svg{width:20px;height:20px}
+.fact b{display:block;font-size:16px}
+.fact span{font-family:"JetBrains Mono",monospace;font-size:13px;color:#555}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+.scroll-hint{margin-top:64px;display:flex;align-items:center;gap:12px;font-family:"Silkscreen",monospace;font-size:11px;letter-spacing:.1em;color:var(--cobalt-deep)}
+.scroll-hint .bar{width:2px;height:34px;background:var(--ink);position:relative;overflow:hidden}
+.scroll-hint .bar::after{content:"";position:absolute;inset:0;background:var(--yellow);animation:scrolldrop 1.8s var(--ease) infinite}
+@keyframes scrolldrop{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+
+/* ============================================================
+   SECTION SHELL
+   ============================================================ */
+section{position:relative}
+.band{padding:clamp(70px,10vw,120px) 0}
+.band-blue{background:var(--cobalt);color:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.band-blue .blue-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--grey-line) 1px,transparent 1px),linear-gradient(90deg,var(--grey-line) 1px,transparent 1px);
+  background-size:52px 52px;opacity:.6;pointer-events:none;
+}
+.sec-head{max-width:70ch;margin-bottom:52px}
+.sec-title{
+  font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(30px,5.5vw,60px);line-height:.95;letter-spacing:-.01em;margin:18px 0 0;
+  text-wrap:balance;
+}
+.on-blue .sec-title{color:#fff}
+.sec-lead{font-size:clamp(16px,2vw,19px);color:#444;margin-top:20px;max-width:60ch}
+.on-blue .sec-lead{color:#d5daff}
+
+/* reveal on scroll */
+.rise{opacity:0;transform:translateY(16px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.rise.in{opacity:1;transform:none}
+.rise.d1{transition-delay:.05s}.rise.d2{transition-delay:.1s}.rise.d3{transition-delay:.15s}.rise.d4{transition-delay:.2s}
+
+/* arena cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{
+  background:#fff;border:2.5px solid var(--ink);border-radius:var(--r);
+  padding:26px;position:relative;overflow:hidden;
+  box-shadow:6px 6px 0 rgba(10,10,10,.9);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.on-blue .card{box-shadow:6px 6px 0 var(--cobalt-darker)}
+@media(hover:hover){.card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--yellow)}}
+.card .num{font-family:"Silkscreen",monospace;font-size:12px;color:var(--cobalt);letter-spacing:.1em}
+.card h3{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:21px;text-transform:uppercase;margin:14px 0 10px;letter-spacing:-.01em}
+.card p{font-size:15px;color:#444;margin:0}
+.card .ic{position:absolute;top:20px;right:20px;width:34px;height:34px;color:var(--cobalt)}
+.card .ic svg{width:100%;height:100%}
+
+/* ============================================================
+   COUNTDOWN BAND
+   ============================================================ */
+.count-band{background:var(--ink);color:#fff;padding:clamp(50px,8vw,80px) 0;border-bottom:3px solid var(--ink);position:relative;overflow:hidden}
+.count-scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.03) 3px 4px);pointer-events:none}
+.count-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:36px}
+.count-label{font-family:"Silkscreen",monospace;font-size:13px;letter-spacing:.12em;color:var(--yellow)}
+.count-label b{display:block;color:#fff;font-size:22px;margin-top:10px;font-family:"Archivo Black",sans-serif;text-transform:uppercase}
+.clock{display:flex;gap:14px}
+.clock .unit{background:var(--cobalt);border:2px solid #fff;border-radius:var(--r);padding:14px 8px;min-width:82px;text-align:center;box-shadow:5px 5px 0 var(--cobalt-darker)}
+.clock .unit .n{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:clamp(26px,5vw,40px);font-variant-numeric:tabular-nums;line-height:1;display:block}
+.clock .unit .l{font-family:"Silkscreen",monospace;font-size:9px;letter-spacing:.08em;color:#cdd3ff;margin-top:8px;display:block}
+
+/* ============================================================
+   REGISTRATION FORM
+   ============================================================ */
+.form-band{background:linear-gradient(180deg,#f4f5ff,#fff);padding:clamp(36px,5vw,52px) 0}
+.form-band .sec-title{font-size:clamp(28px,3.4vw,42px)}
+.form-band .sec-lead{font-size:16px;margin-top:12px;max-width:72ch}
+.console{
+  max-width:840px;margin:24px auto 0;
+  background:#fff;border:3px solid var(--ink);border-radius:var(--r);
+  box-shadow:14px 14px 0 var(--cobalt);
+  overflow:hidden;
+}
+.console-bar{
+  background:var(--ink);color:#fff;padding:12px 18px;
+  display:flex;align-items:center;gap:14px;
+}
+.console-bar .dots{display:flex;gap:7px}
+.console-bar .dots i{width:12px;height:12px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5)}
+.console-bar .dots i:nth-child(1){background:var(--err)}
+.console-bar .dots i:nth-child(2){background:var(--yellow)}
+.console-bar .dots i:nth-child(3){background:var(--ok)}
+.console-bar .path{font-family:"JetBrains Mono",monospace;font-size:13px;color:#c9cdff}
+.console-bar .path b{color:#fff}
+.console-bar .live{margin-left:auto;font-family:"Silkscreen",monospace;font-size:10px;color:var(--yellow);letter-spacing:.1em}
+
+.form-body{padding:clamp(20px,3vw,30px) clamp(20px,3.4vw,34px)}
+.step-panel{display:none;animation:panelIn .45s var(--ease)}
+.step-panel.active{display:block}
+@keyframes panelIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+.step-title{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+.step-desc{font-family:"JetBrains Mono",monospace;font-size:13px;color:#666;margin:0 0 18px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:12px;position:relative}
+.field.col-2{grid-column:span 2}
+@media(max-width:600px){.field.col-2{grid-column:span 1}}
+.field > label{font-family:"Silkscreen",monospace;font-size:11px;letter-spacing:.06em;color:var(--cobalt-deep);text-transform:uppercase}
+.field > label .req{color:var(--err)}
+.field .hint{font-family:"JetBrains Mono",monospace;font-size:11px;color:#8a8fb0}
+.inp{
+  font-family:"JetBrains Mono",monospace;font-size:16px;color:var(--ink);
+  background:#fff;border:2px solid var(--ink);border-radius:var(--r);
+  padding:12px 13px;width:100%;transition:box-shadow .18s,border-color .18s,transform .1s;
+  appearance:none;
+}
+textarea.inp{resize:vertical;min-height:48px;font-family:"Manrope",sans-serif;line-height:1.5}
+.inp::placeholder{color:#b4b8d4}
+.inp:focus{outline:none;border-color:var(--cobalt);box-shadow:4px 4px 0 var(--cobalt)}
+.field.bad .inp{border-color:var(--err);box-shadow:4px 4px 0 rgba(255,92,92,.5);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.field .err-msg{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--err);display:none}
+.field.bad .err-msg{display:block}
+.inp-wrap{position:relative}
+.inp-wrap .pre{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:"JetBrains Mono",monospace;color:#9aa0c9;font-size:14px;pointer-events:none}
+.inp-wrap .pre + .inp{padding-left:34px}
+
+/* select */
+select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+
+.occ-row{display:flex;flex-wrap:wrap;gap:10px}
+.occ-pill{cursor:pointer;position:relative;touch-action:manipulation}
+.occ-pill input{position:absolute;opacity:0}
+.occ-pill span{display:inline-flex;align-items:center;gap:9px;border:2px solid var(--ink);border-radius:var(--r);background:#fff;padding:11px 16px;font-weight:700;font-size:14px;transition:background .15s,color .15s,box-shadow .15s,transform .12s var(--ease)}
+.occ-pill span::before{content:"";width:10px;height:10px;flex:none;border:2px solid var(--ink);border-radius:50%;background:#fff}
+.occ-pill input:checked + span{background:var(--ink);color:#fff}
+.occ-pill input:checked + span::before{background:var(--yellow);border-color:#fff}
+.occ-pill input:focus-visible + span{box-shadow:0 0 0 3px var(--yellow)}
+@media(hover:hover){.occ-pill:hover span{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--cobalt)}}
+.file-pick{position:relative;display:inline-flex;align-items:center;gap:12px;cursor:pointer;max-width:100%}
+.file-pick input{position:absolute;inset:0;opacity:0;cursor:pointer;pointer-events:none}
+.file-pick:focus-within .file-btn{box-shadow:0 0 0 3px var(--cobalt)}
+@media(hover:hover){.file-pick:hover .file-btn{background:var(--cobalt)}}
+.file-btn{font-family:"Silkscreen",monospace;font-size:10px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:10px 14px;border-radius:var(--r);flex:none;transition:background .15s,box-shadow .15s}
+.file-name{font-family:"JetBrains Mono",monospace;font-size:12px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.field.bad .file-btn{box-shadow:0 0 0 3px rgba(255,92,92,.55)}
+@keyframes condIn{from{opacity:0;transform:translateY(8px)}}
+#condStudent:not([hidden]),#condPro:not([hidden]){animation:condIn .25s var(--ease)}
+.form-body.cond-open .field{margin-bottom:9px}
+.form-body.cond-open .inp{padding:10px 12px}
+.form-body.cond-open textarea.inp{min-height:40px}
+.form-body.cond-open .step-desc{margin:0 0 10px}
+.form-body.cond-open .form-nav{margin-top:10px}
+.form-status{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--err);text-align:center;margin:2px 0 0;line-height:1.6}
+.form-status a{color:var(--err);font-weight:700}
+
+/* nav buttons */
+.form-nav{display:flex;justify-content:space-between;gap:14px;margin-top:16px}
+.btn-step{
+  cursor:pointer;font-family:"Manrope",sans-serif;font-weight:800;font-size:15px;
+  border:2.5px solid var(--ink);border-radius:var(--r);padding:13px 22px;background:#fff;color:var(--ink);
+  display:inline-flex;align-items:center;gap:10px;transition:transform .16s var(--ease),box-shadow .16s,background .2s,color .2s;
+  box-shadow:5px 5px 0 var(--ink);
+}
+@media(hover:hover){.btn-step:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}}
+.btn-step:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn-step.next{background:var(--ink);color:#fff}
+.btn-step.next:hover{background:var(--cobalt)}
+.btn-step.hidden{visibility:hidden}
+.btn-step[disabled]{opacity:.4;cursor:not-allowed}
+.btn-step svg{width:15px;height:15px}
+
+/* success */
+.success{display:none;text-align:center;padding:36px 20px 12px}
+.success.show{display:block;animation:panelIn .5s var(--ease)}
+.success .seal{width:96px;height:96px;margin:0 auto 24px;background:var(--cobalt);border:3px solid var(--ink);border-radius:var(--r);display:grid;place-items:center;box-shadow:8px 8px 0 var(--yellow);animation:pop .5s var(--ease)}
+.success .seal svg{width:46px;height:46px;color:#fff}
+.success h3{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,5vw,40px);margin:0 0 12px;letter-spacing:-.01em}
+.success p{font-family:"JetBrains Mono",monospace;font-size:14px;color:#555;max-width:46ch;margin:0 auto 8px}
+.success .ticket{margin:26px auto 0;max-width:420px;background:var(--ink);color:#fff;border-radius:var(--r);padding:20px;font-family:"JetBrains Mono",monospace;text-align:left;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--cobalt)}
+.success .ticket .tr{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}
+.success .ticket .tr span:first-child{color:#9aa0c9}
+.success .ticket .tr span:last-child{color:var(--yellow)}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{display:grid;gap:14px;max-width:820px;margin:0 auto}
+.q{border:2.5px solid var(--ink);border-radius:var(--r);background:#fff;overflow:hidden;box-shadow:5px 5px 0 var(--cobalt-darker)}
+.q summary{
+  cursor:pointer;list-style:none;padding:20px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  font-weight:800;font-size:17px;color:var(--ink);
+}
+.q summary::-webkit-details-marker{display:none}
+.q summary .pm{width:26px;height:26px;flex:none;border:2px solid var(--ink);border-radius:var(--r);display:grid;place-items:center;transition:transform .3s var(--ease),background .2s;font-family:"JetBrains Mono",monospace;font-weight:700}
+.q[open] summary .pm{transform:rotate(135deg);background:var(--yellow)}
+.q .a{padding:0 22px 20px;color:#444;font-size:15px;line-height:1.65}
+.q[open] summary{background:#f4f5ff}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--ink);color:#fff;padding:60px 0 calc(40px + env(safe-area-inset-bottom));border-top:3px solid var(--ink)}
+.foot-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot-cta h2{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(24px,4vw,40px);margin:0;letter-spacing:-.01em}
+.foot-cta .btn-primary{--bg:var(--yellow)}
+.sponsors{display:flex;flex-wrap:wrap;align-items:center;gap:28px 40px;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.sponsor{display:flex;align-items:center;gap:10px;font-weight:800}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:26px;font-family:"JetBrains Mono",monospace;font-size:12px;color:#9aa0c9}
+.foot-bottom a{color:var(--yellow);text-decoration:none}
+.foot-bottom a:hover{text-decoration:underline}
+
+.fact span.fact-ic{color:var(--yellow)}
+.btn-primary,.btn-step,.btn-mini,.q summary{touch-action:manipulation}
+@media(pointer:coarse){
+  .chip{padding:12px 16px;min-height:44px}
+  .btn-mini{padding:13px 18px}
+  .q summary{padding:22px}
+}
+@media(max-width:600px){
+  .nav{backdrop-filter:none;background:#fff;padding-top:10px;padding-bottom:10px}
+  .nav-brand{gap:8px}
+  .nav-brand small{display:none}
+  .btn-mini{padding:10px 12px;font-size:10px;white-space:nowrap}
+  .console-bar .live{display:none}
+  .console-bar .path{font-size:12px}
+  .hero{padding-top:36px}
+  .count-inner{gap:24px}
+  .clock{width:100%;gap:8px}
+  .clock .unit{min-width:0;flex:1;padding:12px 6px}
+  .console{box-shadow:8px 8px 0 var(--cobalt)}
+  .btn-step{flex:1;justify-content:center;min-height:48px}
+}
+@media(min-width:1100px){
+  .hero{display:flex;min-height:100vh;min-height:100svh;padding-top:clamp(24px,3vh,44px);padding-bottom:clamp(24px,3.5vh,48px)}
+  .hero .wrap{flex:1;display:grid;grid-template-columns:1.02fr .98fr;grid-template-rows:1fr auto;gap:clamp(24px,3vw,56px);align-items:center}
+  .hero-left,.hero-right{align-self:center}
+  .title{font-size:clamp(44px,5vw,80px)}
+  .hero-sub .chip-yellow{font-size:clamp(15px,1.5vw,20px)}
+  .pool{margin-top:40px}
+  .hero-right .console{margin:0}
+  .hero-cta .btn-primary{display:none}
+  .hero-bottom{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:32px 48px;flex-wrap:wrap}
+  .hero-bottom .facts{margin-top:0;flex:1;justify-content:space-between}
+  #register{display:none}
+  .scroll-hint{display:none}
+  .hero-lead .reg-below{display:none}
+  .hero-lead .reg-beside{display:inline}
+  .console-closed .hero-lead .reg-below{display:inline}
+  .console-closed .hero-lead .reg-beside{display:none}
+  .console-closed .hero .wrap{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .console-closed .hero-left{max-width:860px;animation:reflowIn .4s var(--ease)}
+  .console-closed .hero-right{display:none}
+  .console-closed #register{display:block}
+  .console-closed .hero-cta .btn-primary{display:inline-flex;animation:btnIn .45s var(--ease)}
+  .console-closed .hero-cta{justify-content:center}
+  .console-closed .hero-sub{justify-content:center}
+  .console-closed .jp-logo-hero{margin-left:auto;margin-right:auto}
+  .console-closed .hero-lead{margin-left:auto;margin-right:auto}
+  .console-closed .pool{margin-top:0;flex:1 1 460px;max-width:640px}
+  .console-closed .scroll-hint{display:flex;width:100%;justify-content:center;margin-top:10px}
+  .console-closed .hero-bottom{justify-content:space-between;text-align:left}
+}
+@media(min-width:1100px) and (max-height:960px){
+  .jp-logo-hero{margin-bottom:18px}
+  .hero-tag{margin-bottom:16px}
+  .title{font-size:clamp(38px,4.4vw,64px)}
+  .hero-sub{margin:18px 0 6px}
+  .hero-lead{margin:18px 0 24px}
+  .console-bar{padding:9px 14px}
+  .form-body{padding:16px 22px 20px}
+  .step-title{font-size:18px}
+  .step-desc{margin:0 0 12px}
+  .field{margin-bottom:10px}
+  .inp{padding:10px 12px}
+  .form-nav{margin-top:12px}
+  textarea.inp{min-height:42px}
+  .occ-pill span{padding:8px 12px;font-size:13px}
+  .file-btn{padding:7px 10px}
+  .pool{padding:14px 20px}
+  .fact-ic{width:38px;height:38px}
+}
+[hidden]{display:none!important}
+.reg-beside{display:none}
+
+.console-bar .dots i{transition:transform .15s var(--ease),box-shadow .15s}
+.console-bar .dots i:first-child{cursor:pointer;position:relative}
+.console-bar .dots i:first-child::after{content:"\00d7";position:absolute;inset:0;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;line-height:1;color:rgba(0,0,0,.6);opacity:0;transition:opacity .12s}
+.console-bar .dots i:first-child:hover::after,.console-bar .dots i:first-child:focus-visible::after{opacity:1}
+.fact-ic{transition:transform .15s var(--ease),box-shadow .15s}
+.inp:focus{transform:translate(-2px,-2px)}
+.occ-pill span:active{transform:translate(1px,1px)}
+@media(hover:hover){
+  .console-bar .dots i:first-child:hover{transform:scale(1.3);box-shadow:0 0 0 3px rgba(255,92,92,.35)}
+  .fact:hover .fact-ic{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+}
+@keyframes winClose{to{opacity:0;transform:scale(.92) translateY(14px)}}
+@keyframes winOpen{from{opacity:0;transform:scale(.96) translateY(18px)}}
+@keyframes reflowIn{from{opacity:0;transform:translateY(12px)}}
+@keyframes btnIn{from{opacity:0;transform:scale(.8)}60%{transform:scale(1.06)}}
+.console.closing{animation:winClose .26s var(--ease) forwards}
+.console.opening{animation:winOpen .38s var(--ease)}
+
+/* focus visibility */
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.occ-pill:focus-visible{outline-offset:3px}
+
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto}
+  .title .row span{transform:none}
+  .rise{opacity:1;transform:none}
+  .hero-lead,.hero-cta,.pool,.fact,.chip-yellow{opacity:1;transform:none}
+}
+</style>
+
+<!-- ============================ NAV ============================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="jp-logo" viewBox="0 0 702 216">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M115.746 173.92C112.613 174.007 109.568 173.746 106.436 173.31C97.9957 172.089 90.0778 169.387 82.769 164.942C66.5851 155.18 56.2309 140.972 51.9674 122.319C51.0103 118.135 50.5752 113.864 50.5752 109.592C50.4882 92.5083 56.0569 77.516 67.3682 64.7899C77.2003 53.8072 89.3817 47.0956 103.738 44.3063C107.741 43.5218 111.743 43.086 115.746 43.2603C115.746 49.7977 115.746 56.2478 115.746 62.7852C115.572 62.8723 115.398 62.9595 115.224 63.1338C112.874 64.7899 110.525 66.5332 108.263 68.3637C103.129 72.5476 98.2568 76.993 94.1673 82.31C88.6856 89.3703 85.0312 97.128 84.5092 106.28C84.2481 110.638 84.7702 114.91 86.1624 119.006C89.5557 129.204 100.084 139.751 114.876 140.013C115.746 140.013 115.92 140.187 115.92 141.146C115.833 145.591 115.833 154.482 115.833 154.482C115.833 154.482 115.833 155.005 115.833 155.267C115.746 161.455 115.746 167.644 115.746 173.92Z" fill="#2B8EFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M115.744 62.6966C115.744 62.6966 115.744 49.7091 115.744 43.1718C119.312 43.0846 122.792 43.4333 126.272 43.9563C132.798 45.0022 139.063 46.9199 144.98 49.9706C157.248 56.3336 166.906 65.3987 173.432 77.7761C177.173 84.9236 179.61 92.5069 180.567 100.439C181.698 109.765 180.828 119.005 178.043 127.983C174.824 138.181 169.429 147.159 161.86 154.742C152.637 163.895 141.673 169.822 128.97 172.524C124.619 173.395 120.182 173.919 115.744 173.831C115.744 167.555 115.744 161.367 115.744 155.091C115.744 154.829 115.744 154.394 115.744 154.394C115.744 154.394 116.005 154.219 116.092 154.132C122.879 149.338 129.318 144.108 134.886 137.832C138.541 133.736 141.673 129.377 143.849 124.322C146.894 117.174 148.112 109.853 146.546 102.095C143.761 87.9743 131.145 77.4274 116.614 77.0788C115.657 77.0788 115.744 76.2943 115.744 76.2943V62.6966Z" fill="#0561E2"/>
+<path d="M251.935 128.995C251.935 132.686 251.329 136.202 250.205 139.629C249.08 143.057 247.264 146.045 245.015 148.682C242.68 151.318 239.826 153.34 236.366 154.922C232.906 156.416 228.841 157.207 224.343 157.207C217.078 157.207 211.11 155.449 206.526 152.021C201.855 148.594 198.828 143.145 197.357 135.674L212.667 131.983C213.186 135.059 214.397 137.52 216.386 139.365C218.289 141.211 220.711 142.09 223.565 142.09C228.236 142.09 231.436 140.508 233.079 137.256C234.723 134.092 235.587 129.61 235.587 123.985V61.4966H251.935V128.995Z" fill="currentColor"/>
+<path d="M342.061 120.557C342.061 126.182 341.11 131.28 339.207 135.762C337.304 140.332 334.709 144.111 331.422 147.275C328.136 150.439 324.244 152.9 319.746 154.57C315.248 156.328 310.318 157.119 305.042 157.119C299.766 157.119 294.836 156.24 290.425 154.57C285.927 152.9 282.035 150.439 278.662 147.275C275.288 144.111 272.694 140.244 270.877 135.762C268.974 131.28 268.109 126.182 268.109 120.557V61.4966H284.457V120.03C284.457 122.315 284.803 124.688 285.495 127.237C286.186 129.698 287.311 132.071 288.954 134.18C290.511 136.289 292.673 138.047 295.355 139.365C297.95 140.772 301.236 141.387 305.129 141.387C309.021 141.387 312.307 140.684 314.902 139.365C317.497 138.047 319.659 136.289 321.303 134.18C322.86 132.071 324.071 129.786 324.762 127.237C325.454 124.688 325.8 122.315 325.8 120.03V61.4966H342.148V120.557H342.061Z" fill="currentColor"/>
+<path d="M403.99 81.534C402.26 78.9853 399.924 77.1396 397.07 75.9092C394.129 74.6788 391.102 74.1514 387.902 74.1514C385.999 74.1514 384.183 74.4151 382.366 74.8545C380.55 75.294 378.993 75.9971 377.609 76.9639C376.139 77.9306 375.014 79.1611 374.149 80.743C373.284 82.325 372.852 84.0828 372.852 86.1921C372.852 89.3561 373.89 91.8169 376.139 93.3989C378.301 95.0688 380.982 96.5629 384.183 97.7054C387.383 98.9359 390.843 100.166 394.648 101.309C398.454 102.451 401.914 104.033 405.2 106.055C408.401 108.076 411.082 110.801 413.244 114.053C415.407 117.392 416.531 121.875 416.531 127.324C416.531 132.333 415.666 136.728 413.85 140.419C412.033 144.198 409.612 147.274 406.498 149.735C403.384 152.196 399.838 154.042 395.773 155.272C391.708 156.503 387.383 157.118 382.972 157.118C377.263 157.118 371.728 156.151 366.538 154.218C361.262 152.284 356.678 149.032 352.872 144.462L365.241 132.333C367.23 135.409 369.825 137.782 373.111 139.54C376.398 141.298 379.771 142.089 383.404 142.089C385.307 142.089 387.21 141.825 389.113 141.298C391.016 140.771 392.745 139.98 394.302 138.925C395.859 137.87 397.07 136.552 398.022 134.882C398.973 133.3 399.492 131.367 399.492 129.257C399.492 125.83 398.367 123.193 396.205 121.347C394.043 119.502 391.362 117.92 388.161 116.689C384.961 115.459 381.415 114.228 377.609 113.086C373.803 111.943 370.257 110.361 367.143 108.428C363.943 106.494 361.262 103.858 359.1 100.518C356.937 97.1781 355.813 92.7837 355.813 87.2468C355.813 82.4129 356.764 78.2822 358.754 74.7666C360.656 71.2511 363.251 68.3508 366.451 65.9778C369.565 63.6927 373.198 61.935 377.263 60.7924C381.328 59.6499 385.48 59.1226 389.718 59.1226C394.562 59.1226 399.232 59.9136 403.817 61.3198C408.314 62.8139 412.466 65.2747 416.099 68.7024L403.99 81.534Z" fill="currentColor"/>
+<path d="M430.197 61.4966H461.075C465.486 61.4966 469.724 61.936 473.876 62.8149C477.941 63.6938 481.574 65.1879 484.688 67.2093C487.801 69.3186 490.31 72.0432 492.126 75.4708C493.942 78.9863 494.894 83.2928 494.894 88.4782C494.894 94.3668 493.856 99.1127 491.867 102.716C489.877 106.32 487.196 109.132 483.823 111.066C480.449 112.999 476.557 114.405 472.06 115.108C467.562 115.811 462.978 116.163 458.134 116.163H446.458V154.834H430.11V61.4966H430.197ZM456.404 102.013C458.74 102.013 461.161 101.925 463.67 101.749C466.178 101.574 468.513 101.046 470.589 100.167C472.665 99.2885 474.395 97.9702 475.779 96.2124C477.076 94.4546 477.768 91.9938 477.768 88.8298C477.768 85.9295 477.163 83.6444 475.952 81.8866C474.741 80.1289 473.184 78.8106 471.281 77.9317C469.378 76.9649 467.216 76.4376 464.881 76.1739C462.545 75.9102 460.296 75.7345 458.134 75.7345H446.458V102.013H456.404Z" fill="currentColor"/>
+<path d="M526.291 61.4966H540.389L580.003 154.834H561.321L552.758 133.477H512.971L504.668 154.834H486.331L526.291 61.4966ZM547.049 119.239L532.864 81.2714L518.507 119.239H547.049Z" fill="currentColor"/>
+<path d="M599.897 114.933L565.387 61.4966H585.886L608.46 98.6733L631.295 61.4966H650.755L616.245 114.933V154.922H599.897V114.933Z" fill="currentColor"/>
+</symbol></defs></svg>
+<nav class="nav" id="nav">
+  <div class="nav-brand">
+    <svg class="jp-logo jp-logo-nav" viewBox="0 0 702 216" role="img" aria-label="Juspay"><use href="#jp-logo"/></svg>
+    <small>· LIVE BUG BOUNTY</small>
+  </div>
+  <div class="nav-right">
+    <div class="nav-count">SPOTS LEFT <b id="navSpots">30</b></div>
+    <a href="#register" class="btn-mini">APPLY NOW
+      <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap">
+   <div class="hero-left">
+    <svg class="jp-logo jp-logo-hero" viewBox="0 0 702 216" role="img" aria-label="Juspay"><use href="#jp-logo"/></svg>
+    <span class="hero-tag"><span class="blink"></span> APPLICATIONS OPEN · 30 SPOTS · BENGALURU</span>
+
+    <h1 class="title" aria-label="Live Bug Bounty">
+      <span class="row"><span>LIVE BUG</span></span>
+      <span class="row"><span>BOUNTY</span></span>
+    </h1>
+
+    <div class="hero-sub">
+      <span class="chip-yellow">30 HACKERS</span>
+      <span class="chip-yellow">24 HOURS</span>
+    </div>
+
+    <p class="hero-lead">A 24-hour, on-site adversarial event at Juspay HQ. Thirty of the sharpest security researchers, one live target surface, and a ₹3,50,000 pool on the table. <span class="reg-below">Register below</span><span class="reg-beside">Fill in the form</span>. Selected hackers get the address, the rules of engagement, and their pass.</p>
+
+    <div class="hero-cta">
+      <a href="#register" class="btn-primary">
+        Register as a researcher
+        <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="#arena" class="btn-ghost">// what's the arena?</a>
+    </div>
+
+
+   </div>
+   <div class="hero-right" id="heroForm"></div>
+   <div class="hero-bottom">
+    <div class="pool">
+      <div class="amt"><small>TOTAL BOUNTY POOL</small>₹3,50,000</div>
+      <div class="meta">30 HACKERS<br>24 HOURS<br><b>1 LIVE TARGET</b></div>
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <span class="fact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <div><b>Juspay Office</b><span>Bengaluru, India</span></div>
+      </div>
+      <div class="fact">
+        <span class="fact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+        <div><b>12 – 13 September</b><span>24 hours, on-site</span></div>
+      </div>
+      <div class="fact">
+        <span class="fact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21v-7M4 4v3M12 21v-9M12 4v3M20 21v-5M20 4v7"/><circle cx="4" cy="10.5" r="2"/><circle cx="12" cy="8.5" r="2"/><circle cx="20" cy="12.5" r="2"/></svg></span>
+        <div><b>Applications close</b><span id="closeDate">04 September 2026</span></div>
+      </div>
+    </div>
+
+    <div class="scroll-hint"><span class="bar"></span> SCROLL TO ENTER</div>
+   </div>
+  </div>
+</header>
+
+<!-- ============================ ARENA ============================ -->
+<section class="band" id="arena">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <span class="eyebrow">01 — The Arena</span>
+      <h2 class="sec-title">What you're walking into</h2>
+      <p class="sec-lead">No CTF props, no staged boxes. One live production-grade target, hardened and monitored, opened up for 24 hours to a hand-picked room of researchers hunting real, reproducible impact.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card rise d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="num">// SCOPE</div>
+        <h3>A real target</h3>
+        <p>Payment-grade web and API surface. Full scope, rules of engagement, and test credentials handed to selected hackers on arrival.</p>
+      </article>
+      <article class="card rise d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <div class="num">// PACE</div>
+        <h3>24 hours, live</h3>
+        <p>Triagers on the floor the whole time. Valid reports are reviewed and rewarded as they land — the leaderboard moves in real time.</p>
+      </article>
+      <article class="card rise d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg></div>
+        <div class="num">// STAKES</div>
+        <h3>₹3.5L pool</h3>
+        <p>Split by severity and originality. Top hunters take home the biggest cuts — plus swag, cred, and a standing invite to what's next.</p>
+      </article>
+      <article class="card rise d4">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13A4 4 0 0116 11"/></svg></div>
+        <div class="num">// ROOM</div>
+        <h3>30 researchers</h3>
+        <p>Curated, capped, in-person. Meals, workstations, and a full night with people who break things for a living.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ COUNTDOWN ============================ -->
+<section class="count-band">
+  <div class="count-scan"></div>
+  <div class="wrap count-inner">
+    <div class="count-label">// APPLICATIONS CLOSE IN<b>Don't miss the cut.</b></div>
+    <div class="clock" id="clock" aria-label="Countdown to application deadline">
+      <div class="unit"><span class="n" id="cd-d">00</span><span class="l">DAYS</span></div>
+      <div class="unit"><span class="n" id="cd-h">00</span><span class="l">HRS</span></div>
+      <div class="unit"><span class="n" id="cd-m">00</span><span class="l">MIN</span></div>
+      <div class="unit"><span class="n" id="cd-s">00</span><span class="l">SEC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REGISTER ============================ -->
+<section class="form-band" id="register">
+  <div class="wrap">
+    <div class="sec-head rise" style="text-align:center;margin:0 auto 8px;max-width:60ch">
+      <span class="eyebrow" style="justify-content:center">02 — Register</span>
+      <h2 class="sec-title">Claim one of 30 seats</h2>
+      <p class="sec-lead" style="margin-left:auto;margin-right:auto">One quick form. Everything is reviewed by our team — selected hackers are notified by <b>08 September</b> with venue details and their pass.</p>
+    </div>
+
+    <div class="console rise">
+      <div class="console-bar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="path">researcher@juspay:~/<b id="crumb">register</b></span>
+        <span class="live">● REC</span>
+      </div>
+
+      <form class="form-body"      <form class="form-body" id="regform" novalidate>
+        <h3 class="step-title">Who's applying?</h3>
+        <p class="step-desc">// the basics — this is how we'll reach you if you're in</p>
+        <div class="grid2">
+          <div class="field" data-mmp="name">
+            <label for="f-name">Full legal name <span class="req">*</span></label>
+            <input class="inp" id="f-name" name="name" placeholder="Ada Lovelace" autocomplete="name" required>
+            <span class="err-msg">Enter your name.</span>
+          </div>
+          <div class="field" data-mmp="email">
+            <label for="f-email">Email <span class="req">*</span></label>
+            <input class="inp" id="f-email" name="email" type="email" placeholder="you@domain.com" autocomplete="email" required>
+            <span class="err-msg">Enter a valid email.</span>
+          </div>
+          <div class="field" data-mmp="phone">
+            <label for="f-phone">Phone <span class="req">*</span> <span class="hint">+91 added automatically</span></label>
+            <input class="inp" id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
+            <span class="err-msg">Enter a valid phone number (10 digits for India).</span>
+          </div>
+          <div class="field" data-mmp="years_of_security_research_experience">
+            <label for="f-years">Years of security research <span class="req">*</span></label>
+            <input class="inp" id="f-years" name="years" type="number" min="0" max="60" step="1" inputmode="numeric" placeholder="3" required>
+            <span class="err-msg">How many years?</span>
+          </div>
+        </div>
+        <div class="field" data-mmp="what_do_you_do">
+          <label>What do you do? <span class="req">*</span></label>
+          <div class="occ-row" id="occ">
+            <label class="occ-pill"><input type="radio" name="occupation" value="Working Professional"><span>Working Professional</span></label>
+            <label class="occ-pill"><input type="radio" name="occupation" value="Full-time Bug Hunter"><span>Full-time Bug Hunter</span></label>
+            <label class="occ-pill"><input type="radio" name="occupation" value="Student"><span>Student</span></label>
+          </div>
+          <span class="err-msg" style="margin-top:6px">Pick one.</span>
+        </div>
+        <div id="condStudent" hidden>
+          <div class="field" data-mmp="where_do_you_study">
+            <label for="f-study">Where do you study? <span class="req">*</span></label>
+            <input class="inp" id="f-study" name="study" placeholder="University or college" required>
+            <span class="err-msg">Enter your college or university.</span>
+          </div>
+        </div>
+        <div class="grid2" id="condPro" hidden>
+          <div class="field" data-mmp="where_do_you_work">
+            <label for="f-work">Where do you work? <span class="req">*</span></label>
+            <input class="inp" id="f-work" name="work" placeholder="Company name" required>
+            <span class="err-msg">Enter your company.</span>
+          </div>
+          <div class="field" data-mmp="what_is_you_current_designation">
+            <label for="f-designation">Current designation <span class="req">*</span></label>
+            <input class="inp" id="f-designation" name="designation" placeholder="Security Engineer" required>
+            <span class="err-msg">Enter your designation.</span>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field" data-mmp="could_you_share_your_bug_bounty_profiles_such_as_hackerone_bugcrowd_and_any_others_youre_active_on">
+            <label for="f-profiles">Bug bounty profiles <span class="hint">optional</span></label>
+            <input class="inp" id="f-profiles" name="profiles" placeholder="hackerone.com/you, bugcrowd.com/you" inputmode="url" autocapitalize="none" spellcheck="false">
+          </div>
+          <div class="field" data-mmp="notable_work_published_publically">
+            <label for="f-notable">Notable work (published publicly) <span class="hint">optional</span></label>
+            <textarea class="inp" id="f-notable" name="notable" placeholder="Writeups, CVEs, talks, advisories."></textarea>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field" data-mmp="have_you_ever_reported_bugvulnerability_to_juspay_vulnerability_disclosure_program_vdp_">
+            <label>Ever reported a bug to Juspay&#39;s VDP? <span class="req">*</span></label>
+            <div class="occ-row">
+              <label class="occ-pill"><input type="radio" name="vdp" value="YES"><span>Yes</span></label>
+              <label class="occ-pill"><input type="radio" name="vdp" value="NO"><span>No</span></label>
+            </div>
+            <span class="err-msg" style="margin-top:6px">Pick one.</span>
+          </div>
+          <div class="field" data-mmp="do_you_have_any_past_or_present_affiliation_with_juspay_employment_contract_work_internship_or_close_personal_connection_to_a_current_employee">
+            <label>Past or present Juspay affiliation? <span class="req">*</span></label>
+            <div class="occ-row">
+              <label class="occ-pill"><input type="radio" name="affiliation" value="YES"><span>Yes</span></label>
+              <label class="occ-pill"><input type="radio" name="affiliation" value="NO"><span>No</span></label>
+            </div>
+            <span class="err-msg" style="margin-top:6px">Pick one.</span>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field" data-mmp="if_you_get_selected_do_you_consent_to_signing_an_nda_with_juspay_">
+            <label>If selected, consent to signing an NDA? <span class="req">*</span></label>
+            <div class="occ-row">
+              <label class="occ-pill"><input type="radio" name="nda" value="Yes"><span>Yes</span></label>
+              <label class="occ-pill"><input type="radio" name="nda" value="No"><span>No</span></label>
+            </div>
+            <span class="err-msg" style="margin-top:6px">Pick one.</span>
+          </div>
+          <div class="field" data-mmp="latest_resume">
+            <label for="f-resume">Latest resume <span class="hint">optional · max 5 MB</span></label>
+            <label class="file-pick">
+              <input type="file" id="f-resume" name="resume" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
+              <span class="file-btn">CHOOSE FILE</span>
+              <span class="file-name" id="resumeName">No file selected</span>
+            </label>
+            <span class="err-msg">Keep the file under 5 MB.</span>
+          </div>
+        </div>
+        <p class="form-status" id="formStatus" hidden></p>
+        <div class="form-nav" style="justify-content:center">
+          <button type="submit" class="btn-step next" id="btnSubmit">
+            <span id="btnLabel">Submit application</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- success -->
+      <div class="success" id="success">
+        <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>
+        <h3>You're in the queue</h3>
+        <p>Application received. Our team reviews every entry — selected hackers are notified by <b>08 September</b> with venue details and their pass.</p>
+        <div class="ticket">
+          <div class="tr"><span>APPLICANT</span><span id="tk-name">—</span></div>
+          <div class="tr"><span>REF ID</span><span id="tk-ref">—</span></div>
+          <div class="tr"><span>STATUS</span><span>UNDER REVIEW</span></div>
+          <div class="tr"><span>EVENT</span><span>12–13 SEP · BENGALURU</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="band" style="background:#f4f5ff">
+  <div class="wrap">
+    <div class="sec-head rise" style="text-align:center;margin:0 auto 48px;max-width:50ch">
+      <span class="eyebrow" style="justify-content:center">03 — FAQ</span>
+      <h2 class="sec-title">Before you apply</h2>
+    </div>
+    <div class="faq">
+      <details class="q rise"><summary>Is this remote or on-site? <span class="pm">+</span></summary><div class="a">Strictly on-site at Juspay's office in Bengaluru. The whole point is a live room — researchers, triagers, and the target in one place for 24 hours. Selected hackers get the exact address after confirmation.</div></details>
+      <details class="q rise"><summary>Does it cost anything to enter? <span class="pm">+</span></summary><div class="a">No. Registration is free. Meals and workstations are covered on-site.</div></details>
+      <details class="q rise"><summary>How are the 30 spots picked? <span class="pm">+</span></summary><div class="a">Our security team reviews every application — bounty track record, disclosed work, and the surfaces you hunt. Handles with public, reproducible impact stand out. It's curated, not first-come.</div></details>
+      <details class="q rise"><summary>How is the ₹3,50,000 split? <span class="pm">+</span></summary><div class="a">Top three placements take fixed prizes, and a severity + first-blood pool rewards the highest-impact and earliest valid findings. Full rules of engagement and reward tables are shared with selected hackers.</div></details>
+      <details class="q rise"><summary>What do I need to bring? <span class="pm">+</span></summary><div class="a">Your laptop, your toolkit, and a government ID for entry. Power, network, and caffeine are on us. Test credentials and scope are handed out at kickoff.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-cta">
+      <h2>30 seats. 24 hours.<br>One live target.</h2>
+      <a href="#register" class="btn-primary">
+        Register now
+        <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+    <div class="sponsors">
+      <div class="sponsor"><svg class="jp-logo jp-logo-foot" viewBox="0 0 702 216" role="img" aria-label="Juspay"><use href="#jp-logo"/></svg></div>
+    </div>
+    <div class="foot-bottom">
+      <span>Questions? <a href="mailto:bugbounty@juspay.in">bugbounty@juspay.in</a></span>
+      <span>LIVE BUG BOUNTY · BENGALURU · 12–13 SEP 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var consoleEl=document.querySelector('.console');
+  var regWrap=consoleEl.parentNode;
+  var heroSlot=document.getElementById('heroForm');
+  var mqWide=window.matchMedia('(min-width:1100px)');
+  var poolEl=document.querySelector('.pool');
+  var heroLeft=document.querySelector('.hero-left');
+  var heroBottom=document.querySelector('.hero-bottom');
+  function placeConsole(){
+    if(mqWide.matches && !document.body.classList.contains('console-closed')){ heroSlot.appendChild(consoleEl); heroLeft.appendChild(poolEl); }
+    else { regWrap.appendChild(consoleEl); heroBottom.insertBefore(poolEl, heroBottom.firstElementChild); }
+  }
+  placeConsole();
+  if(mqWide.addEventListener){ mqWide.addEventListener('change', placeConsole); } else { mqWide.addListener(placeConsole); }
+  var redDot=document.querySelector('.console-bar .dots i');
+  redDot.setAttribute('role','button');
+  redDot.setAttribute('tabindex','0');
+  redDot.setAttribute('aria-label','Close the form window and move it below');
+  function closeConsole(){
+    if(!mqWide.matches||document.body.classList.contains('console-closed')) return;
+    consoleEl.classList.add('closing');
+    setTimeout(function(){
+      document.body.classList.add('console-closed');
+      placeConsole();
+      consoleEl.classList.remove('closing');
+      consoleEl.classList.add('opening');
+      setTimeout(function(){ consoleEl.classList.remove('opening'); }, 420);
+    }, 260);
+  }
+  redDot.addEventListener('click', closeConsole);
+  redDot.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); closeConsole(); } });
+  function scrollToConsole(){ var t=consoleEl.getBoundingClientRect().top+window.scrollY-90; window.scrollTo({top:t, behavior:reduce?'auto':'smooth'}); }
+  function openConsole(){
+    document.body.classList.remove('console-closed');
+    placeConsole();
+    consoleEl.classList.add('opening');
+    setTimeout(function(){ consoleEl.classList.remove('opening'); }, 420);
+    window.scrollTo({top:0, behavior:reduce?'auto':'smooth'});
+  }
+  document.querySelectorAll('a[href="#register"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      if(mqWide.matches && document.body.classList.contains('console-closed')){ openConsole(); }
+      else { scrollToConsole(); }
+    });
+  });
+
+  /* ---- hero load ---- */
+  requestAnimationFrame(function(){ document.getElementById('hero').classList.add('reveal-in'); });
+
+  /* ---- nav show on scroll ---- */
+  var nav = document.getElementById('nav'), hero = document.getElementById('hero');
+  var navShown=false;
+  window.addEventListener('scroll', function(){
+    var s=window.scrollY>260;
+    if(s!==navShown){navShown=s;nav.classList.toggle('show',s);}
+  }, {passive:true});
+
+  /* ---- floating decorative pixels ---- */
+  (function(){
+    if(reduce) return;
+    var host = document.querySelector('.hero-grid');
+    var cfg = [[10,18,10,'#2233E0'],[26,10,14,'#151ea8'],[70,14,12,'#2233E0'],[82,26,18,'#F2E014'],[64,8,8,'#151ea8'],[90,60,10,'#2233E0']];
+    cfg.forEach(function(c,i){
+      var d=document.createElement('span'); d.className='pixel-square';
+      d.style.left=c[0]+'%'; d.style.top=c[1]+'%'; d.style.width=c[2]+'px'; d.style.height=c[2]+'px';
+      d.style.background=c[3]; d.style.border=c[3]==='#F2E014'?'2px solid #0A0A0A':'none';
+      d.style.animation='floatpix '+(6+i)+'s ease-in-out '+(i*0.4)+'s infinite alternate';
+      host.appendChild(d);
+    });
+    var st=document.createElement('style');
+    st.textContent='@keyframes floatpix{from{transform:translateY(0) rotate(0)}to{transform:translateY(-22px) rotate(8deg)}}';
+    document.head.appendChild(st);
+  })();
+
+  /* ---- scroll reveal ---- */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, {threshold:.15});
+  document.querySelectorAll('.rise').forEach(function(el){ io.observe(el); });
+
+  /* ---- countdown ---- */
+  var closeDate = new Date('2026-09-04T23:59:59+05:30');
+  var deadline = closeDate.getTime();
+  var closeEl = document.getElementById('closeDate');
+  if(closeEl) closeEl.textContent = closeDate.toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'});
+  var elD=document.getElementById('cd-d'),elH=document.getElementById('cd-h'),elM=document.getElementById('cd-m'),elS=document.getElementById('cd-s');
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    var diff = deadline - Date.now();
+    if(diff<0) diff=0;
+    var d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5), m=Math.floor(diff%36e5/6e4), s=Math.floor(diff%6e4/1e3);
+    elD.textContent=pad(d);elH.textContent=pad(h);elM.textContent=pad(m);elS.textContent=pad(s);
+  }
+  tick(); setInterval(tick,1000);
+
+  var occField=document.getElementById('occ').closest('.field');
+  var condStudent=document.getElementById('condStudent');
+  var condPro=document.getElementById('condPro');
+  function syncOcc(){
+    var c=document.querySelector('input[name=occupation]:checked');
+    var v=c?c.value:'';
+    condStudent.hidden=(v!=='Student');
+    condPro.hidden=(v!=='Working Professional');
+    document.getElementById('regform').classList.toggle('cond-open', v==='Student'||v==='Working Professional');
+  }
+  document.querySelectorAll('#occ input[name=occupation]').forEach(function(r){
+    r.addEventListener('change', function(){ occField.classList.remove('bad'); syncOcc(); });
+  });
+  syncOcc();
+  var resumeInput=document.getElementById('f-resume');
+  var resumeName=document.getElementById('resumeName');
+  var MAX_RESUME=5*1024*1024;
+  resumeInput.addEventListener('change', function(){
+    var f=resumeInput.files[0];
+    resumeName.textContent=f?f.name:'No file selected';
+    resumeInput.closest('.field').classList.toggle('bad', !!f&&f.size>MAX_RESUME);
+  });
+  document.querySelectorAll('input[name=vdp],input[name=affiliation],input[name=nda]').forEach(function(r){
+    r.addEventListener('change', function(){ r.closest('.field').classList.remove('bad'); });
+  });
+
+  var API='https://api.makemypass.com/makemypass/public-form/711d18dc-390c-4586-aee1-7fcd365eb8b8/submit/';
+  var TICKET='{"ticket_id":"6e28f507-4c46-4d29-9781-26df159ff7d0","count":1,"my_ticket":true}';
+  var form=document.getElementById('regform');
+  var statusEl=document.getElementById('formStatus');
+  var btnSubmit=document.getElementById('btnSubmit');
+  var btnLabel=document.getElementById('btnLabel');
+  function fieldVal(n){ var el=form.querySelector('[name='+n+']'); return el?el.value.trim():''; }
+  function groupVal(n){ var c=form.querySelector('input[name='+n+']:checked'); return c?c.value:''; }
+  function normalizePhone(raw){
+    var p=raw.replace(/[^\d+]/g,'');
+    if(p.indexOf('+')>0){ p=p.replace(/\+/g,''); }
+    if(p.charAt(0)!=='+'){
+      if(/^91\d{10}$/.test(p)) p='+'+p;
+      else if(/^0\d{10}$/.test(p)) p='+91'+p.slice(1);
+      else if(/^\d{10}$/.test(p)) p='+91'+p;
+    }
+    return p;
+  }
+  function phoneValid(p){
+    if(p.indexOf('+91')===0) return /^\+91[6-9]\d{9}$/.test(p);
+    return /^\+\d{8,15}$/.test(p);
+  }
+  var phoneInput=form.querySelector('[name=phone]');
+  phoneInput.addEventListener('blur', function(){
+    var v=phoneInput.value.trim();
+    if(v) phoneInput.value=normalizePhone(v);
+  });
+  function focusFirstBad(){
+    var fb=form.querySelector('.field.bad');
+    if(fb) fb.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+  }
+  function validate(){
+    var ok=true;
+    form.querySelectorAll('input[required],textarea[required]').forEach(function(inp){
+      if(inp.type==='radio'||inp.type==='checkbox') return;
+      if(inp.closest('[hidden]')) return;
+      var f=inp.closest('.field'), v=inp.value.trim(), good;
+      if(inp.name==='phone'){ inp.value=normalizePhone(v); good=phoneValid(inp.value); }
+      else { good=v&&(inp.type!=='email'||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)); }
+      if(!good){ f.classList.add('bad'); ok=false; } else { f.classList.remove('bad'); }
+    });
+    ['occupation','vdp','affiliation','nda'].forEach(function(n){
+      var f=form.querySelector('input[name='+n+']').closest('.field');
+      if(!form.querySelector('input[name='+n+']:checked')){ f.classList.add('bad'); ok=false; } else { f.classList.remove('bad'); }
+    });
+    var rf=resumeInput.files[0];
+    if(rf&&rf.size>MAX_RESUME){ resumeInput.closest('.field').classList.add('bad'); ok=false; }
+    return ok;
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    statusEl.hidden=true;
+    if(!validate()){ statusEl.innerHTML='Fix the highlighted fields and try again.'; statusEl.hidden=false; focusFirstBad(); return; }
+    btnSubmit.disabled=true; btnLabel.textContent='Submitting…';
+    var occ=groupVal('occupation');
+    var fd=new FormData();
+    fd.append('name', fieldVal('name'));
+    fd.append('phone', fieldVal('phone'));
+    fd.append('email', fieldVal('email'));
+    fd.append('years_of_security_research_experience', fieldVal('years'));
+    fd.append('what_do_you_do', occ);
+    if(occ==='Student'){ fd.append('where_do_you_study', fieldVal('study')); }
+    if(occ==='Working Professional'){
+      fd.append('where_do_you_work', fieldVal('work'));
+      fd.append('what_is_you_current_designation', fieldVal('designation'));
+    }
+    if(resumeInput.files.length){ fd.append('latest_resume[]', resumeInput.files[0]); }
+    var notable=fieldVal('notable');
+    if(notable){ fd.append('notable_work_published_publically', notable); }
+    var profiles=fieldVal('profiles');
+    if(profiles){ fd.append('could_you_share_your_bug_bounty_profiles_such_as_hackerone_bugcrowd_and_any_others_youre_active_on', profiles); }
+    fd.append('have_you_ever_reported_bugvulnerability_to_juspay_vulnerability_disclosure_program_vdp_', groupVal('vdp'));
+    fd.append('do_you_have_any_past_or_present_affiliation_with_juspay_employment_contract_work_internship_or_close_personal_connection_to_a_current_employee', groupVal('affiliation'));
+    fd.append('if_you_get_selected_do_you_consent_to_signing_an_nda_with_juspay_[]', groupVal('nda'));
+    fd.append('__tickets[]', TICKET);
+    fetch(API,{method:'POST',body:fd}).then(function(r){
+      return r.json().then(function(j){ return {ok:r.ok&&!j.hasError, body:j}; }, function(){ return {ok:r.ok, body:null}; });
+    }).then(function(res){
+      if(!res.ok){ var err=new Error('rejected'); err.body=res.body; throw err; }
+      var mmpId=res.body&&res.body.response&&res.body.response.event_register_id;
+      var ref=mmpId?String(mmpId).split('-')[0].toUpperCase():'LBB-'+Math.abs(hashCode(Date.now()+''+Math.floor(performance.now()))).toString(36).toUpperCase().slice(0,6);
+      document.getElementById('tk-name').textContent=fieldVal('name')||'—';
+      document.getElementById('tk-ref').textContent=ref;
+      form.style.display='none';
+      document.getElementById('crumb').textContent='submitted';
+      document.getElementById('success').classList.add('show');
+      burst();
+      scrollToConsole();
+    }).catch(function(err){
+      btnSubmit.disabled=false; btnLabel.textContent='Submit application';
+      var mail=' If it keeps failing, email us at <a href="mailto:bugbounty@juspay.in">bugbounty@juspay.in</a> and we will register you.';
+      var msg='Submission failed. Check your connection and try again.'+mail;
+      if(err&&err.body&&err.body.message&&typeof err.body.message==='object'){
+        Object.keys(err.body.message).forEach(function(k){
+          var f=form.querySelector('[data-mmp="'+k+'"]');
+          if(f){
+            f.classList.add('bad');
+            var em=f.querySelector('.err-msg');
+            var t=err.body.message[k];
+            if(em&&t){ em.textContent=Array.isArray(t)?t.join(' '):String(t); }
+          }
+        });
+        msg='The server rejected some fields. Fix the highlighted ones and try again.'+mail;
+        focusFirstBad();
+      }
+      statusEl.innerHTML=msg; statusEl.hidden=false;
+    });
+  });
+  function hashCode(s){var h=0;for(var i=0;i<s.length;i++){h=(h<<5)-h+s.charCodeAt(i);h|=0;}return h;}
+
+  /* ---- pixel burst on success ---- */
+  function burst(){
+    if(reduce) return;
+    var seal=document.querySelector('.seal'); if(!seal) return;
+    var r=seal.getBoundingClientRect();
+    var cx=r.left+r.width/2, cy=r.top+r.height/2;
+    var cols=['#2233E0','#F2E014','#151ea8','#25D07A'];
+    for(var i=0;i<28;i++){
+      var p=document.createElement('span');
+      var sz=6+Math.random()*8;
+      p.style.cssText='position:fixed;z-index:999;pointer-events:none;width:'+sz+'px;height:'+sz+'px;background:'+cols[i%4]+';left:'+cx+'px;top:'+cy+'px;border:1px solid #0A0A0A;';
+      document.body.appendChild(p);
+      var ang=Math.random()*Math.PI*2, dist=80+Math.random()*180;
+      var dx=Math.cos(ang)*dist, dy=Math.sin(ang)*dist-40;
+      p.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+dx+'px,'+(dy+220)+'px) rotate('+(Math.random()*720-360)+'deg)',opacity:0}],
+        {duration:900+Math.random()*600,easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish=function(){this.effect.target.remove();};
+    }
+  }
+})();
+</script>
