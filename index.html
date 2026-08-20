@@ -339,7 +339,7 @@ section{position:relative}
   padding:12px 13px;width:100%;transition:box-shadow .18s,border-color .18s,transform .1s;
   appearance:none;
 }
-textarea.inp{resize:vertical;min-height:96px;font-family:"Manrope",sans-serif;line-height:1.5}
+textarea.inp{resize:vertical;min-height:48px;font-family:"Manrope",sans-serif;line-height:1.5}
 .inp::placeholder{color:#b4b8d4}
 .inp:focus{outline:none;border-color:var(--cobalt);box-shadow:4px 4px 0 var(--cobalt)}
 .field.bad .inp{border-color:var(--err);box-shadow:4px 4px 0 rgba(255,92,92,.5);animation:shake .3s}
@@ -362,9 +362,16 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .occ-pill input:checked + span::before{background:var(--yellow);border-color:#fff}
 .occ-pill input:focus-visible + span{box-shadow:0 0 0 3px var(--yellow)}
 @media(hover:hover){.occ-pill:hover span{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--cobalt)}}
-.occ-pill.sq span::before{border-radius:0}
+.nda-check{cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;touch-action:manipulation;position:relative}
+.nda-check input{position:absolute;opacity:0}
+.nda-check .box{width:18px;height:18px;flex:none;border:2px solid var(--ink);border-radius:var(--r);background:#fff;display:grid;place-items:center;transition:background .12s}
+.nda-check .box svg{width:12px;height:12px;opacity:0;transition:opacity .12s}
+.nda-check input:checked ~ .box{background:var(--yellow)}
+.nda-check input:checked ~ .box svg{opacity:1}
+.nda-check input:focus-visible ~ .box{box-shadow:0 0 0 3px var(--cobalt)}
+.field.bad .nda-check .box{border-color:var(--err);box-shadow:3px 3px 0 rgba(255,92,92,.5)}
 .file-pick{position:relative;display:flex;align-items:center;gap:12px;border:2px solid var(--ink);border-radius:var(--r);background:#fff;padding:9px 10px;cursor:pointer;transition:box-shadow .15s,border-color .15s}
-.file-pick input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.file-pick input{position:absolute;inset:0;opacity:0;cursor:pointer;pointer-events:none}
 .file-pick:focus-within{border-color:var(--cobalt);box-shadow:4px 4px 0 var(--cobalt)}
 .file-btn{font-family:"Silkscreen",monospace;font-size:10px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:9px 12px;border-radius:var(--r);flex:none}
 .file-name{font-family:"JetBrains Mono",monospace;font-size:12px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -493,7 +500,10 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .field{margin-bottom:10px}
   .inp{padding:10px 12px}
   .form-nav{margin-top:12px}
-  textarea.inp{min-height:60px}
+  textarea.inp{min-height:42px}
+  .occ-pill span{padding:8px 12px;font-size:13px}
+  .file-pick{padding:6px 8px}
+  .file-btn{padding:7px 10px}
   .pool{padding:14px 20px}
   .fact-ic{width:38px;height:38px}
 }
@@ -738,7 +748,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
         </div>
         <div class="grid2">
           <div class="field" data-mmp="have_you_ever_reported_bugvulnerability_to_juspay_vulnerability_disclosure_program_vdp_">
-            <label>Reported to Juspay&#39;s VDP before? <span class="req">*</span></label>
+            <label>Reported to Juspay VDP before? <span class="req">*</span></label>
             <div class="occ-row">
               <label class="occ-pill"><input type="radio" name="vdp" value="YES"><span>Yes</span></label>
               <label class="occ-pill"><input type="radio" name="vdp" value="NO"><span>No</span></label>
@@ -746,7 +756,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
             <span class="err-msg" style="margin-top:6px">Pick one.</span>
           </div>
           <div class="field" data-mmp="do_you_have_any_past_or_present_affiliation_with_juspay_employment_contract_work_internship_or_close_personal_connection_to_a_current_employee">
-            <label>Any Juspay affiliation? <span class="req">*</span> <span class="hint">work, internship, close connection</span></label>
+            <label>Any Juspay affiliation? <span class="req">*</span></label>
             <div class="occ-row">
               <label class="occ-pill"><input type="radio" name="affiliation" value="YES"><span>Yes</span></label>
               <label class="occ-pill"><input type="radio" name="affiliation" value="NO"><span>No</span></label>
@@ -755,9 +765,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
           </div>
         </div>
         <div class="field" data-mmp="agree_to_rules_of_engagement__nda">
-          <div class="occ-row">
-            <label class="occ-pill sq"><input type="checkbox" name="nda"><span>I agree to the rules of engagement &amp; NDA</span></label>
-          </div>
+          <label class="nda-check"><input type="checkbox" name="nda"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><span>I agree to the rules of engagement &amp; NDA</span></label>
           <span class="err-msg" style="margin-top:6px">You must agree to the rules of engagement &amp; NDA.</span>
         </div>
         <p class="form-status" id="formStatus" hidden></p>
