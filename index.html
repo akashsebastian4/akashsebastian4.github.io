@@ -163,16 +163,16 @@ img{max-width:100%}
   background:var(--yellow);color:var(--ink);
   padding:8px 16px;border:2px solid var(--ink);border-radius:var(--r);
   box-shadow:4px 4px 0 var(--ink);
-  opacity:0;transform:scale(.7) rotate(-3deg);
+  opacity:0;transform:scale(.92) rotate(-2deg);
 }
 .reveal-in .chip-yellow{animation:pop .3s var(--ease) .16s forwards}
 .reveal-in .chip-yellow:nth-child(2){animation-delay:.24s}
-@keyframes pop{60%{transform:scale(1.08) rotate(1deg)}to{opacity:1;transform:scale(1) rotate(-1.5deg)}}
+@keyframes pop{60%{transform:scale(1.03)}to{opacity:1;transform:scale(1) rotate(-1.5deg)}}
 
-.hero-lead{max-width:56ch;font-size:clamp(17px,2vw,20px);color:#333;margin:26px 0 34px;opacity:0;transform:translateY(14px)}
+.hero-lead{max-width:56ch;font-size:clamp(17px,2vw,20px);color:#333;margin:26px 0 34px;opacity:0;transform:translateY(10px)}
 .reveal-in .hero-lead{animation:fadeUp .35s .22s var(--ease) forwards}
 
-.hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;opacity:0;transform:translateY(14px)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;opacity:0;transform:translateY(10px)}
 .reveal-in .hero-cta{animation:fadeUp .35s .28s var(--ease) forwards}
 
 .btn-primary{
@@ -208,7 +208,7 @@ img{max-width:100%}
   padding:22px 26px;max-width:640px;
   box-shadow:10px 10px 0 var(--cobalt);
   display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
-  opacity:0;transform:translateY(20px);
+  opacity:0;transform:translateY(12px);
 }
 .reveal-in .pool{animation:fadeUp .35s .3s var(--ease) forwards}
 .pool::before,.pool::after{content:"";position:absolute;width:12px;height:12px;background:#fff;border:3px solid var(--ink)}
@@ -221,7 +221,7 @@ img{max-width:100%}
 
 /* fact rows */
 .facts{display:flex;flex-wrap:wrap;gap:26px 40px;margin-top:34px}
-.fact{display:flex;align-items:center;gap:14px;opacity:0;transform:translateY(14px)}
+.fact{display:flex;align-items:center;gap:14px;opacity:0;transform:translateY(10px)}
 .reveal-in .fact{animation:fadeUp .35s var(--ease) forwards}
 .reveal-in .fact:nth-child(1){animation-delay:.32s}
 .reveal-in .fact:nth-child(2){animation-delay:.38s}
@@ -260,7 +260,7 @@ section{position:relative}
 .on-blue .sec-lead{color:#d5daff}
 
 /* reveal on scroll */
-.rise{opacity:0;transform:translateY(22px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.rise{opacity:0;transform:translateY(16px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
 .rise.in{opacity:1;transform:none}
 .rise.d1{transition-delay:.05s}.rise.d2{transition-delay:.1s}.rise.d3{transition-delay:.15s}.rise.d4{transition-delay:.2s}
 
