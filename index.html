@@ -318,22 +318,6 @@ section{position:relative}
 .console-bar .path b{color:#fff}
 .console-bar .live{margin-left:auto;font-family:"Silkscreen",monospace;font-size:10px;color:var(--yellow);letter-spacing:.1em}
 
-/* progress */
-.steps{display:flex;border-bottom:2px solid var(--ink)}
-.step-tab{
-  flex:1;padding:12px 10px;text-align:center;position:relative;
-  font-family:"Silkscreen",monospace;font-size:11px;letter-spacing:.04em;color:#9aa0c9;
-  background:#f0f1fb;border-right:2px solid var(--ink);transition:color .3s,background .3s;
-}
-.step-tab:last-child{border-right:0}
-.step-tab .k{display:block;font-size:15px;margin-bottom:4px}
-.step-tab.active{color:var(--ink);background:var(--yellow)}
-.step-tab.done{color:var(--ink);background:#dfe2ff}
-.step-tab.done .k::before{content:"✓ "}
-
-.progress-track{height:6px;background:#e4e6f5;position:relative}
-.progress-fill{position:absolute;inset:0 auto 0 0;width:33%;background:var(--cobalt);transition:width .5s var(--ease)}
-
 .form-body{padding:clamp(20px,3vw,30px) clamp(20px,3.4vw,34px)}
 .step-panel{display:none;animation:panelIn .45s var(--ease)}
 .step-panel.active{display:block}
@@ -369,20 +353,6 @@ textarea.inp{resize:vertical;min-height:96px;font-family:"Manrope",sans-serif;li
 /* select */
 select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
 
-/* skill chips */
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{
-  cursor:pointer;user-select:none;
-  font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:500;
-  padding:9px 14px;border:2px solid var(--ink);border-radius:var(--r);background:#fff;
-  display:inline-flex;align-items:center;gap:8px;transition:transform .12s var(--ease),background .15s,color .15s,box-shadow .15s;
-}
-.chip .box{width:13px;height:13px;border:2px solid var(--ink);background:#fff;transition:background .1s;position:relative}
-@media(hover:hover){.chip:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--cobalt)}}
-.chip.on{background:var(--ink);color:#fff}
-.chip.on .box{background:var(--yellow);border-color:#fff}
-.chip.on .box::after{content:"";position:absolute;inset:2px;background:var(--yellow)}
-
 /* level radio cards */
 .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:600px){.levels{grid-template-columns:1fr}}
@@ -402,29 +372,6 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .level.on .tick{background:var(--yellow);border-color:#fff}
 .level .tick svg{width:10px;height:10px;opacity:0;transition:opacity .15s}
 .level.on .tick svg{opacity:1}
-
-/* checkbox rule */
-.rule{
-  display:flex;gap:14px;align-items:flex-start;
-  background:#f4f5ff;border:2px solid var(--ink);border-radius:var(--r);padding:16px;cursor:pointer;
-  transition:background .15s;
-}
-@media(hover:hover){.rule:hover{background:#eceeff}}
-.rule input{position:absolute;opacity:0}
-.rule .cbox{width:24px;height:24px;flex:none;border:2px solid var(--ink);background:#fff;border-radius:var(--r);display:grid;place-items:center;transition:background .15s}
-.rule .cbox svg{width:14px;height:14px;opacity:0;transform:scale(.4);transition:.18s var(--ease)}
-.rule.on .cbox{background:var(--cobalt)}
-.rule.on .cbox svg{opacity:1;transform:scale(1)}
-.rule .rtxt{font-size:14px;color:#333}
-.rule .rtxt b{display:block;font-family:"Silkscreen",monospace;font-size:11px;color:var(--cobalt-deep);margin-bottom:5px;letter-spacing:.04em}
-
-/* review */
-.review-list{border:2px solid var(--ink);border-radius:var(--r);overflow:hidden}
-.review-item{display:flex;justify-content:space-between;gap:16px;padding:13px 16px;border-bottom:2px solid var(--grey);font-family:"JetBrains Mono",monospace;font-size:13px}
-.review-item:last-child{border-bottom:0}
-.review-item .rk{color:#8a8fb0;text-transform:uppercase;font-family:"Silkscreen",monospace;font-size:10px;letter-spacing:.05em}
-.review-item .rv{color:var(--ink);font-weight:500;text-align:right;word-break:break-word}
-.review-item .rv:empty::after{content:"—";color:#c4c8e0}
 
 /* nav buttons */
 .form-nav{display:flex;justify-content:space-between;gap:14px;margin-top:16px}
@@ -484,14 +431,19 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .foot-bottom a:hover{text-decoration:underline}
 
 .fact span.fact-ic{color:var(--yellow)}
-.btn-primary,.btn-step,.btn-mini,.chip,.level,.rule,.step-tab,.q summary{touch-action:manipulation}
+.btn-primary,.btn-step,.btn-mini,.level,.q summary{touch-action:manipulation}
 @media(pointer:coarse){
   .chip{padding:12px 16px;min-height:44px}
   .btn-mini{padding:13px 18px}
   .q summary{padding:22px}
 }
 @media(max-width:600px){
-  .nav{backdrop-filter:none;background:#fff}
+  .nav{backdrop-filter:none;background:#fff;padding-top:10px;padding-bottom:10px}
+  .nav-brand{gap:8px}
+  .nav-brand small{display:none}
+  .btn-mini{padding:10px 12px;font-size:10px;white-space:nowrap}
+  .console-bar .live{display:none}
+  .console-bar .path{font-size:12px}
   .hero{padding-top:36px}
   .count-inner{gap:24px}
   .clock{width:100%;gap:8px}
@@ -507,6 +459,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .hero-sub .chip-yellow{font-size:clamp(15px,1.5vw,20px)}
   .pool{margin-top:40px}
   .hero-right .console{margin:0}
+  .hero-cta .btn-primary{display:none}
   .hero-bottom{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:32px 48px;flex-wrap:wrap}
   .hero-bottom .pool{margin-top:0;flex:1 1 480px}
   .hero-bottom .facts{margin-top:0}
@@ -520,7 +473,6 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .hero-sub{margin:18px 0 6px}
   .hero-lead{margin:18px 0 24px}
   .console-bar{padding:9px 14px}
-  .step-tab{padding:9px 8px}
   .form-body{padding:16px 22px 20px}
   .step-title{font-size:18px}
   .step-desc{margin:0 0 12px}
@@ -530,6 +482,8 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .pool{padding:14px 20px}
   .fact-ic{width:38px;height:38px}
 }
+[hidden]{display:none!important}
+
 /* focus visibility */
 :focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
 .chip:focus-visible,.level:focus-visible,.rule:focus-visible{outline-offset:3px}
@@ -683,172 +637,81 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
     <div class="sec-head rise" style="text-align:center;margin:0 auto 8px;max-width:60ch">
       <span class="eyebrow" style="justify-content:center">02 — Register</span>
       <h2 class="sec-title">Claim one of 30 seats</h2>
-      <p class="sec-lead" style="margin-left:auto;margin-right:auto">Three quick steps. Everything is reviewed by our team — selected hackers are notified by <b>08 September</b> with venue details and their pass.</p>
+      <p class="sec-lead" style="margin-left:auto;margin-right:auto">One quick form. Everything is reviewed by our team — selected hackers are notified by <b>08 September</b> with venue details and their pass.</p>
     </div>
 
     <div class="console rise">
       <div class="console-bar">
         <span class="dots"><i></i><i></i><i></i></span>
-        <span class="path">researcher@juspay:~/<b id="crumb">identity</b></span>
+        <span class="path">researcher@juspay:~/<b id="crumb">register</b></span>
         <span class="live">● REC</span>
       </div>
 
-      <!-- step tabs -->
-      <div class="steps" id="tabs">
-        <div class="step-tab active" data-tab="0"><span class="k">01</span>IDENTITY</div>
-        <div class="step-tab" data-tab="1"><span class="k">02</span>PROFILE</div>
-        <div class="step-tab" data-tab="2"><span class="k">03</span>LOGISTICS</div>
-      </div>
-      <div class="progress-track"><div class="progress-fill" id="pfill"></div></div>
-
-      <form class="form-body" id="regform" novalidate>
-
-        <!-- STEP 1 -->
-        <div class="step-panel active" data-panel="0">
-          <h3 class="step-title">Who's applying?</h3>
-          <p class="step-desc">// the basics — this is how we'll reach you if you're in</p>
-          <div class="grid2">
-            <div class="field">
-              <label>Full name <span class="req">*</span></label>
-              <input class="inp" name="name" placeholder="Ada Lovelace" autocomplete="name" required>
-              <span class="err-msg">Enter your name.</span>
-            </div>
-            <div class="field">
-              <label>Hacker handle <span class="req">*</span></label>
-              <div class="inp-wrap"><span class="pre">@</span><input class="inp" name="handle" placeholder="nullbyte" autocapitalize="none" spellcheck="false" required></div>
-              <span class="err-msg">Pick a handle.</span>
-            </div>
-            <div class="field">
-              <label>Email <span class="req">*</span></label>
-              <input class="inp" name="email" type="email" placeholder="you@domain.com" autocomplete="email" required>
-              <span class="err-msg">Enter a valid email.</span>
-            </div>
-            <div class="field">
-              <label>Phone <span class="req">*</span></label>
-              <input class="inp" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
-              <span class="err-msg">Enter a contact number.</span>
-            </div>
-            <div class="field col-2">
-              <label>Where are you based? <span class="req">*</span></label>
-              <input class="inp" name="city" placeholder="City, Country" required>
-              <span class="err-msg">Tell us your city.</span>
-            </div>
+      <form class="form-body"      <form class="form-body" id="regform" novalidate>
+        <h3 class="step-title">Who's applying?</h3>
+        <p class="step-desc">// the basics — this is how we'll reach you if you're in</p>
+        <div class="grid2">
+          <div class="field">
+            <label for="f-name">Full name <span class="req">*</span></label>
+            <input class="inp" id="f-name" name="name" placeholder="Ada Lovelace" autocomplete="name" required>
+            <span class="err-msg">Enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email <span class="req">*</span></label>
+            <input class="inp" id="f-email" name="email" type="email" placeholder="you@domain.com" autocomplete="email" required>
+            <span class="err-msg">Enter a valid email.</span>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone <span class="req">*</span></label>
+            <input class="inp" id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
+            <span class="err-msg">Enter a contact number.</span>
+          </div>
+          <div class="field">
+            <label for="f-city">Where are you based? <span class="req">*</span></label>
+            <input class="inp" id="f-city" name="city" placeholder="City, Country" required>
+            <span class="err-msg">Tell us your city.</span>
           </div>
         </div>
-
-        <!-- STEP 2 -->
-        <div class="step-panel" data-panel="1">
-          <h3 class="step-title">Show your teeth</h3>
-          <p class="step-desc">// how you hunt, and where we can see your work</p>
-
+        <div class="field">
+          <label>You are <span class="req">*</span></label>
+          <div class="levels" id="occ">
+            <label class="level"><input type="radio" name="occupation" value="Student"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">// 01</div><div class="lv-t">Student</div><div class="lv-d">college or school</div></label>
+            <label class="level"><input type="radio" name="occupation" value="Professional"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">// 02</div><div class="lv-t">Professional</div><div class="lv-d">working in the industry</div></label>
+            <label class="level"><input type="radio" name="occupation" value="Full-time bug hunter"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">// 03</div><div class="lv-t">Bug hunter</div><div class="lv-d">full-time bounty hunting</div></label>
+          </div>
+          <span class="err-msg" style="margin-top:6px">Pick one.</span>
+        </div>
+        <div class="grid2" id="extraStudent" hidden>
           <div class="field col-2">
-            <label>Experience level <span class="req">*</span></label>
-            <div class="levels" id="levels">
-              <label class="level"><input type="radio" name="level" value="Rising"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">TIER 1</div><div class="lv-t">Rising</div><div class="lv-d">&lt; 2 yrs · building a track record</div></label>
-              <label class="level"><input type="radio" name="level" value="Seasoned"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">TIER 2</div><div class="lv-t">Seasoned</div><div class="lv-d">2–5 yrs · consistent bounties</div></label>
-              <label class="level"><input type="radio" name="level" value="Elite"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">TIER 3</div><div class="lv-t">Elite</div><div class="lv-d">5+ yrs · leaderboard regular</div></label>
-            </div>
-            <span class="err-msg" style="margin-top:6px">Select a tier.</span>
-          </div>
-
-          <div class="field col-2">
-            <label>Primary attack surfaces <span class="req">*</span> <span class="hint">pick all that apply</span></label>
-            <div class="chips" id="skills">
-              <span class="chip" tabindex="0" data-v="Web / API"><span class="box"></span>Web / API</span>
-              <span class="chip" tabindex="0" data-v="Mobile"><span class="box"></span>Mobile</span>
-              <span class="chip" tabindex="0" data-v="Auth / IDOR"><span class="box"></span>Auth / IDOR</span>
-              <span class="chip" tabindex="0" data-v="Payments logic"><span class="box"></span>Payments logic</span>
-              <span class="chip" tabindex="0" data-v="Cloud / Infra"><span class="box"></span>Cloud / Infra</span>
-              <span class="chip" tabindex="0" data-v="Recon / OSINT"><span class="box"></span>Recon / OSINT</span>
-              <span class="chip" tabindex="0" data-v="Crypto / Protocol"><span class="box"></span>Crypto / Protocol</span>
-              <span class="chip" tabindex="0" data-v="Reverse engineering"><span class="box"></span>Reverse engineering</span>
-            </div>
-            <span class="err-msg" style="margin-top:8px">Choose at least one surface.</span>
-          </div>
-
-          <div class="grid2" style="margin-top:2px">
-            <div class="field">
-              <label>Primary bounty profile <span class="req">*</span></label>
-              <input class="inp" name="platform" placeholder="hackerone.com/yourname" inputmode="url" autocapitalize="none" spellcheck="false" required>
-              <span class="hint">HackerOne, Bugcrowd, Intigriti…</span>
-              <span class="err-msg">Drop a profile link.</span>
-            </div>
-            <div class="field">
-              <label>GitHub / X <span class="hint">optional</span></label>
-              <input class="inp" name="social" placeholder="github.com/yourname" inputmode="url" autocapitalize="none" spellcheck="false">
-            </div>
-            <div class="field col-2">
-              <label>Proudest find <span class="hint">optional · 240 chars</span></label>
-              <textarea class="inp" name="bio" maxlength="240" placeholder="The bug you'd put on a t-shirt. Impact, target class, what made it clever."></textarea>
-              <span class="hint" style="text-align:right"><span id="bioCount">0</span>/240</span>
-            </div>
+            <label for="f-college">College / school name <span class="req">*</span></label>
+            <input class="inp" id="f-college" name="college" placeholder="Your college or school" required>
+            <span class="err-msg">Enter your college or school.</span>
           </div>
         </div>
-
-        <!-- STEP 3 -->
-        <div class="step-panel" data-panel="2">
-          <h3 class="step-title">Logistics &amp; the pact</h3>
-          <p class="step-desc">// on-site in Bengaluru — a few last details</p>
-          <div class="grid2">
-            <div class="field">
-              <label>Need travel support? <span class="req">*</span></label>
-              <select class="inp" name="travel" required>
-                <option value="" disabled selected>Select…</option>
-                <option>No — I'm local / self-arranged</option>
-                <option>Yes — travelling within India</option>
-                <option>Yes — travelling internationally</option>
-              </select>
-              <span class="err-msg">Let us know.</span>
-            </div>
-            <div class="field">
-              <label>T-shirt size <span class="req">*</span></label>
-              <select class="inp" name="tshirt" required>
-                <option value="" disabled selected>Select…</option>
-                <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-              </select>
-              <span class="err-msg">Pick a size.</span>
-            </div>
-            <div class="field col-2">
-              <label>Dietary preference <span class="hint">optional</span></label>
-              <input class="inp" name="diet" placeholder="Veg / Non-veg / Vegan / allergies">
-            </div>
+        <div class="grid2" id="extraPro" hidden>
+          <div class="field">
+            <label for="f-company">Company name <span class="req">*</span></label>
+            <input class="inp" id="f-company" name="company" placeholder="Where you work" required>
+            <span class="err-msg">Enter your company.</span>
           </div>
-
-          <label class="rule" id="ruleAvail">
-            <input type="checkbox" name="avail" required>
-            <span class="cbox"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span>
-            <span class="rtxt"><b>// AVAILABILITY</b>I can be on-site at Juspay HQ, Bengaluru, for the full 24 hours on 12–13 September 2026.</span>
-          </label>
-          <div class="field"><span class="err-msg" id="availErr" style="margin:-8px 0 0">Please confirm your availability.</span></div>
-
-          <label class="rule" id="ruleTerms" style="margin-top:14px">
-            <input type="checkbox" name="terms" required>
-            <span class="cbox"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span>
-            <span class="rtxt"><b>// RULES OF ENGAGEMENT</b>I'll test only in-scope assets, follow responsible-disclosure rules, and agree to the event code of conduct.</span>
-          </label>
-          <div class="field"><span class="err-msg" id="termsErr" style="margin:-8px 0 0">You must accept the rules of engagement.</span></div>
-
-          <div style="margin-top:18px">
-            <span class="eyebrow">Review</span>
-            <div class="review-list" style="margin-top:14px">
-              <div class="review-item"><span class="rk">Name / Handle</span><span class="rv" id="rv-name"></span></div>
-              <div class="review-item"><span class="rk">Contact</span><span class="rv" id="rv-contact"></span></div>
-              <div class="review-item"><span class="rk">Tier</span><span class="rv" id="rv-level"></span></div>
-              <div class="review-item"><span class="rk">Surfaces</span><span class="rv" id="rv-skills"></span></div>
-              <div class="review-item"><span class="rk">Profile</span><span class="rv" id="rv-platform"></span></div>
-            </div>
+          <div class="field">
+            <label for="f-designation">Designation <span class="req">*</span></label>
+            <input class="inp" id="f-designation" name="designation" placeholder="Security Engineer" required>
+            <span class="err-msg">Enter your designation.</span>
           </div>
         </div>
-
-        <!-- nav -->
-        <div class="form-nav">
-          <button type="button" class="btn-step hidden" id="btnPrev">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back
-          </button>
-          <button type="button" class="btn-step next" id="btnNext">
-            Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-          <button type="submit" class="btn-step next hidden" id="btnSubmit">
+        <div class="grid2">
+          <div class="field">
+            <label for="f-h1">HackerOne handle <span class="hint">optional</span></label>
+            <input class="inp" id="f-h1" name="hackerone" placeholder="hackerone.com/yourname" inputmode="url" autocapitalize="none" spellcheck="false">
+          </div>
+          <div class="field">
+            <label for="f-bc">Bugcrowd handle <span class="hint">optional</span></label>
+            <input class="inp" id="f-bc" name="bugcrowd" placeholder="bugcrowd.com/yourname" inputmode="url" autocapitalize="none" spellcheck="false">
+          </div>
+        </div>
+        <div class="form-nav" style="justify-content:center">
+          <button type="submit" class="btn-step next" id="btnSubmit">
             Submit application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
           </button>
         </div>
@@ -969,122 +832,40 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   }
   tick(); setInterval(tick,1000);
 
-  /* ---- skills chips ---- */
-  document.querySelectorAll('#skills .chip').forEach(function(ch){
-    function toggle(){ ch.classList.toggle('on'); ch.closest('.field').classList.remove('bad'); }
-    ch.addEventListener('click', toggle);
-    ch.addEventListener('keydown', function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); }});
+  var occLevels=document.querySelectorAll('#occ .level');
+  var exStu=document.getElementById('extraStudent');
+  var exPro=document.getElementById('extraPro');
+  function selectOcc(lv){
+    occLevels.forEach(function(x){x.classList.remove('on');});
+    lv.classList.add('on');
+    lv.querySelector('input').checked=true;
+    lv.closest('.field').classList.remove('bad');
+    var v=lv.querySelector('input').value;
+    exStu.hidden=(v!=='Student');
+    exPro.hidden=(v!=='Professional');
+  }
+  occLevels.forEach(function(lv){
+    lv.addEventListener('click', function(){ selectOcc(lv); });
+    lv.querySelector('input').addEventListener('change', function(){ selectOcc(lv); });
   });
 
-  /* ---- level cards ---- */
-  var levels = document.querySelectorAll('#levels .level');
-  levels.forEach(function(lv){
-    lv.addEventListener('click', function(){
-      levels.forEach(function(x){x.classList.remove('on');});
-      lv.classList.add('on'); lv.querySelector('input').checked=true;
-      lv.closest('.field').classList.remove('bad');
-    });
-  });
-
-  /* ---- rule checkboxes ---- */
-  document.querySelectorAll('.rule').forEach(function(r){
-    r.addEventListener('click', function(e){
-      if(e.target.tagName!=='INPUT'){ var c=r.querySelector('input'); c.checked=!c.checked; }
-      r.classList.toggle('on', r.querySelector('input').checked);
-    });
-    r.addEventListener('keydown',function(e){ if(e.key===' '){e.preventDefault(); r.click();}});
-  });
-
-  /* ---- bio counter ---- */
-  var bio=document.querySelector('[name=bio]'), bc=document.getElementById('bioCount');
-  if(bio) bio.addEventListener('input', function(){ bc.textContent=bio.value.length; });
-
-  /* ---- multi-step ---- */
   var form=document.getElementById('regform');
-  var panels=[].slice.call(document.querySelectorAll('.step-panel'));
-  var tabs=[].slice.call(document.querySelectorAll('.step-tab'));
-  var pfill=document.getElementById('pfill'), crumb=document.getElementById('crumb');
-  var btnPrev=document.getElementById('btnPrev'), btnNext=document.getElementById('btnNext'), btnSubmit=document.getElementById('btnSubmit');
-  var crumbs=['identity','profile','logistics'];
-  var step=0;
-
-  function show(n){
-    step=n;
-    panels.forEach(function(p,i){ p.classList.toggle('active', i===n); });
-    tabs.forEach(function(t,i){ t.classList.toggle('active', i===n); t.classList.toggle('done', i<n); });
-    pfill.style.width=((n+1)/panels.length*100)+'%';
-    crumb.textContent=crumbs[n];
-    btnPrev.classList.toggle('hidden', n===0);
-    btnNext.classList.toggle('hidden', n===panels.length-1);
-    btnSubmit.classList.toggle('hidden', n!==panels.length-1);
-    if(n===panels.length-1) fillReview();
-    scrollToConsole();
-  }
-
-  function markBad(field){ field.classList.add('bad'); }
-
-  function validate(n){
-    var ok=true;
-    if(n===0){
-      panels[0].querySelectorAll('input[required]').forEach(function(inp){
-        var f=inp.closest('.field'), v=inp.value.trim();
-        var good = v && (inp.type!=='email' || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));
-        if(!good){ markBad(f); ok=false; } else f.classList.remove('bad');
-      });
-    }
-    if(n===1){
-      var lvl=document.querySelector('input[name=level]:checked');
-      if(!lvl){ markBad(document.getElementById('levels').closest('.field')); ok=false; }
-      var anySkill=document.querySelector('#skills .chip.on');
-      if(!anySkill){ markBad(document.getElementById('skills').closest('.field')); ok=false; }
-      var plat=document.querySelector('[name=platform]');
-      if(!plat.value.trim()){ markBad(plat.closest('.field')); ok=false; } else plat.closest('.field').classList.remove('bad');
-    }
-    if(n===2){
-      panels[2].querySelectorAll('select[required]').forEach(function(s){
-        var f=s.closest('.field');
-        if(!s.value){ markBad(f); ok=false; } else f.classList.remove('bad');
-      });
-      var avail=document.querySelector('[name=avail]'), terms=document.querySelector('[name=terms]');
-      document.getElementById('availErr').style.display = avail.checked?'none':'block';
-      document.getElementById('termsErr').style.display = terms.checked?'none':'block';
-      if(!avail.checked||!terms.checked) ok=false;
-    }
-    return ok;
-  }
-
-  function fillReview(){
-    var g=function(n){var e=document.querySelector('[name='+n+']');return e?e.value.trim():'';};
-    document.getElementById('rv-name').textContent=(g('name')||'—')+(g('handle')?' · @'+g('handle'):'');
-    document.getElementById('rv-contact').textContent=[g('email'),g('phone')].filter(Boolean).join(' · ');
-    var lvl=document.querySelector('input[name=level]:checked');
-    document.getElementById('rv-level').textContent=lvl?lvl.value:'';
-    var sk=[].slice.call(document.querySelectorAll('#skills .chip.on')).map(function(c){return c.dataset.v;});
-    document.getElementById('rv-skills').textContent=sk.join(', ');
-    document.getElementById('rv-platform').textContent=g('platform');
-  }
-
-  btnNext.addEventListener('click', function(){ if(validate(step)) show(step+1); else nudge(); });
-  btnPrev.addEventListener('click', function(){ show(step-1); });
-  tabs.forEach(function(t){ t.addEventListener('click', function(){
-    var target=+t.dataset.tab;
-    if(target<=step){ show(target); }        // free to go back
-    else { if(validate(step)) show(step+1); else nudge(); }
-  });});
-
-  function nudge(){
-    var bad=document.querySelector('.step-panel.active .bad, .step-panel.active .err-msg[style*="block"]');
-  }
-
-  /* ---- submit ---- */
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    if(!validate(2)) return;
+    var ok=true;
+    form.querySelectorAll('input[required]').forEach(function(inp){
+      if(inp.closest('[hidden]')) return;
+      var f=inp.closest('.field'), v=inp.value.trim();
+      var good=v&&(inp.type!=='email'||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));
+      if(!good){ f.classList.add('bad'); ok=false; } else { f.classList.remove('bad'); }
+    });
+    var occ=document.querySelector('input[name=occupation]:checked');
+    var occField=document.getElementById('occ').closest('.field');
+    if(!occ){ occField.classList.add('bad'); ok=false; } else { occField.classList.remove('bad'); }
+    if(!ok) return;
     var ref='LBB-'+Math.abs(hashCode(Date.now()+''+Math.floor(performance.now()))).toString(36).toUpperCase().slice(0,6);
-    document.getElementById('tk-name').textContent='@'+(document.querySelector('[name=handle]').value.trim()||'anon');
+    document.getElementById('tk-name').textContent=document.querySelector('[name=name]').value.trim()||'—';
     document.getElementById('tk-ref').textContent=ref;
-    document.querySelector('.steps').style.display='none';
-    document.querySelector('.progress-track').style.display='none';
     form.style.display='none';
     document.getElementById('crumb').textContent='submitted';
     document.getElementById('success').classList.add('show');
