@@ -28,7 +28,7 @@
   --err:#FF5C5C;
   --r:2px;
   --shadow-hard:8px 8px 0 var(--ink);
-  --maxw:1180px;
+  --maxw:1320px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 
@@ -499,6 +499,15 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .console{box-shadow:8px 8px 0 var(--cobalt)}
   .btn-step{flex:1;justify-content:center;min-height:48px}
 }
+@media(min-width:1100px){
+  .hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,3.5vw,56px);align-items:start}
+  .title{font-size:clamp(44px,5vw,80px)}
+  .hero-sub .chip-yellow{font-size:clamp(15px,1.5vw,20px)}
+  .pool{margin-top:40px}
+  .hero-right .console{margin:0}
+  #register{display:none}
+  .scroll-hint{display:none}
+}
 /* focus visibility */
 :focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
 .chip:focus-visible,.level:focus-visible,.rule:focus-visible{outline-offset:3px}
@@ -540,6 +549,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 <header class="hero" id="hero">
   <div class="hero-grid"></div>
   <div class="wrap">
+   <div class="hero-left">
     <svg class="jp-logo jp-logo-hero" viewBox="0 0 702 216" role="img" aria-label="Juspay"><use href="#jp-logo"/></svg>
     <span class="hero-tag"><span class="blink"></span> APPLICATIONS OPEN · 30 SPOTS · BENGALURU</span>
 
@@ -584,6 +594,8 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
     </div>
 
     <div class="scroll-hint"><span class="bar"></span> SCROLL TO ENTER</div>
+   </div>
+   <div class="hero-right" id="heroForm"></div>
   </div>
 </header>
 
@@ -874,6 +886,18 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  var consoleEl=document.querySelector('.console');
+  var regWrap=consoleEl.parentNode;
+  var heroSlot=document.getElementById('heroForm');
+  var mqWide=window.matchMedia('(min-width:1100px)');
+  function placeConsole(){ if(mqWide.matches){ heroSlot.appendChild(consoleEl); } else { regWrap.appendChild(consoleEl); } }
+  placeConsole();
+  if(mqWide.addEventListener){ mqWide.addEventListener('change', placeConsole); } else { mqWide.addListener(placeConsole); }
+  function scrollToConsole(){ var t=consoleEl.getBoundingClientRect().top+window.scrollY-90; window.scrollTo({top:t, behavior:reduce?'auto':'smooth'}); }
+  document.querySelectorAll('a[href="#register"]').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); scrollToConsole(); });
+  });
+
   /* ---- hero load ---- */
   requestAnimationFrame(function(){ document.getElementById('hero').classList.add('reveal-in'); });
 
@@ -969,8 +993,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
     btnNext.classList.toggle('hidden', n===panels.length-1);
     btnSubmit.classList.toggle('hidden', n!==panels.length-1);
     if(n===panels.length-1) fillReview();
-    var top=document.getElementById('register').getBoundingClientRect().top+window.scrollY-80;
-    window.scrollTo({top:top, behavior:reduce?'auto':'smooth'});
+    scrollToConsole();
   }
 
   function markBad(field){ field.classList.add('bad'); }
@@ -1041,8 +1064,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
     document.getElementById('crumb').textContent='submitted';
     document.getElementById('success').classList.add('show');
     burst();
-    var top=document.getElementById('register').getBoundingClientRect().top+window.scrollY-80;
-    window.scrollTo({top:top, behavior:reduce?'auto':'smooth'});
+    scrollToConsole();
   });
   function hashCode(s){var h=0;for(var i=0;i<s.length;i++){h=(h<<5)-h+s.charCodeAt(i);h|=0;}return h;}
 
