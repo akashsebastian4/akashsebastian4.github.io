@@ -330,8 +330,8 @@ section{position:relative}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:12px;position:relative}
 .field.col-2{grid-column:span 2}
 @media(max-width:600px){.field.col-2{grid-column:span 1}}
-.field label{font-family:"Silkscreen",monospace;font-size:11px;letter-spacing:.06em;color:var(--cobalt-deep);text-transform:uppercase}
-.field label .req{color:var(--err)}
+.field > label{font-family:"Silkscreen",monospace;font-size:11px;letter-spacing:.06em;color:var(--cobalt-deep);text-transform:uppercase}
+.field > label .req{color:var(--err)}
 .field .hint{font-family:"JetBrains Mono",monospace;font-size:11px;color:#8a8fb0}
 .inp{
   font-family:"JetBrains Mono",monospace;font-size:16px;color:var(--ink);
@@ -353,25 +353,15 @@ textarea.inp{resize:vertical;min-height:96px;font-family:"Manrope",sans-serif;li
 /* select */
 select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
 
-/* level radio cards */
-.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media(max-width:600px){.levels{grid-template-columns:1fr}}
-.level{
-  cursor:pointer;border:2px solid var(--ink);border-radius:var(--r);padding:18px 16px;background:#fff;
-  transition:transform .15s var(--ease),box-shadow .15s,background .15s;position:relative;
-}
-@media(hover:hover){.level:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--cobalt)}}
-.level input{position:absolute;opacity:0}
-.level .lv-k{font-family:"Silkscreen",monospace;font-size:13px;color:var(--cobalt)}
-.level .lv-t{font-weight:800;font-size:16px;margin:8px 0 4px}
-.level .lv-d{font-family:"JetBrains Mono",monospace;font-size:11px;color:#777;line-height:1.5}
-.level.on{background:var(--ink);color:#fff}
-.level.on .lv-k{color:var(--yellow)}
-.level.on .lv-d{color:#c9cdff}
-.level .tick{position:absolute;top:12px;right:12px;width:18px;height:18px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:#fff}
-.level.on .tick{background:var(--yellow);border-color:#fff}
-.level .tick svg{width:10px;height:10px;opacity:0;transition:opacity .15s}
-.level.on .tick svg{opacity:1}
+.occ-row{display:flex;flex-wrap:wrap;gap:10px}
+.occ-pill{cursor:pointer;position:relative;touch-action:manipulation}
+.occ-pill input{position:absolute;opacity:0}
+.occ-pill span{display:inline-flex;align-items:center;gap:9px;border:2px solid var(--ink);border-radius:var(--r);background:#fff;padding:11px 16px;font-weight:700;font-size:14px;transition:background .15s,color .15s,box-shadow .15s,transform .12s var(--ease)}
+.occ-pill span::before{content:"";width:10px;height:10px;flex:none;border:2px solid var(--ink);border-radius:50%;background:#fff}
+.occ-pill input:checked + span{background:var(--ink);color:#fff}
+.occ-pill input:checked + span::before{background:var(--yellow);border-color:#fff}
+.occ-pill input:focus-visible + span{box-shadow:0 0 0 3px var(--yellow)}
+@media(hover:hover){.occ-pill:hover span{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--cobalt)}}
 
 /* nav buttons */
 .form-nav{display:flex;justify-content:space-between;gap:14px;margin-top:16px}
@@ -431,7 +421,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .foot-bottom a:hover{text-decoration:underline}
 
 .fact span.fact-ic{color:var(--yellow)}
-.btn-primary,.btn-step,.btn-mini,.level,.q summary{touch-action:manipulation}
+.btn-primary,.btn-step,.btn-mini,.q summary{touch-action:manipulation}
 @media(pointer:coarse){
   .chip{padding:12px 16px;min-height:44px}
   .btn-mini{padding:13px 18px}
@@ -461,8 +451,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   .hero-right .console{margin:0}
   .hero-cta .btn-primary{display:none}
   .hero-bottom{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:32px 48px;flex-wrap:wrap}
-  .hero-bottom .pool{margin-top:0;flex:1 1 480px}
-  .hero-bottom .facts{margin-top:0}
+  .hero-bottom .facts{margin-top:0;flex:1;justify-content:space-between}
   #register{display:none}
   .scroll-hint{display:none}
 }
@@ -486,7 +475,7 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 
 /* focus visibility */
 :focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
-.chip:focus-visible,.level:focus-visible,.rule:focus-visible{outline-offset:3px}
+.occ-pill:focus-visible{outline-offset:3px}
 
 /* reduced motion */
 @media(prefers-reduced-motion:reduce){
@@ -674,10 +663,10 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
         </div>
         <div class="field">
           <label>You are <span class="req">*</span></label>
-          <div class="levels" id="occ">
-            <label class="level"><input type="radio" name="occupation" value="Student"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">// 01</div><div class="lv-t">Student</div><div class="lv-d">college or school</div></label>
-            <label class="level"><input type="radio" name="occupation" value="Professional"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">// 02</div><div class="lv-t">Professional</div><div class="lv-d">working in the industry</div></label>
-            <label class="level"><input type="radio" name="occupation" value="Full-time bug hunter"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="4"><path d="M5 12l5 5L20 7"/></svg></span><div class="lv-k">// 03</div><div class="lv-t">Bug hunter</div><div class="lv-d">full-time bounty hunting</div></label>
+          <div class="occ-row" id="occ">
+            <label class="occ-pill"><input type="radio" name="occupation" value="Student"><span>Student</span></label>
+            <label class="occ-pill"><input type="radio" name="occupation" value="Professional"><span>Professional</span></label>
+            <label class="occ-pill"><input type="radio" name="occupation" value="Full-time bug hunter"><span>Full-time bug hunter</span></label>
           </div>
           <span class="err-msg" style="margin-top:6px">Pick one.</span>
         </div>
@@ -778,7 +767,13 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   var regWrap=consoleEl.parentNode;
   var heroSlot=document.getElementById('heroForm');
   var mqWide=window.matchMedia('(min-width:1100px)');
-  function placeConsole(){ if(mqWide.matches){ heroSlot.appendChild(consoleEl); } else { regWrap.appendChild(consoleEl); } }
+  var poolEl=document.querySelector('.pool');
+  var heroLeft=document.querySelector('.hero-left');
+  var heroBottom=document.querySelector('.hero-bottom');
+  function placeConsole(){
+    if(mqWide.matches){ heroSlot.appendChild(consoleEl); heroLeft.appendChild(poolEl); }
+    else { regWrap.appendChild(consoleEl); heroBottom.insertBefore(poolEl, heroBottom.firstElementChild); }
+  }
   placeConsole();
   if(mqWide.addEventListener){ mqWide.addEventListener('change', placeConsole); } else { mqWide.addListener(placeConsole); }
   function scrollToConsole(){ var t=consoleEl.getBoundingClientRect().top+window.scrollY-90; window.scrollTo({top:t, behavior:reduce?'auto':'smooth'}); }
@@ -832,24 +827,17 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
   }
   tick(); setInterval(tick,1000);
 
-  var occLevels=document.querySelectorAll('#occ .level');
   var exStu=document.getElementById('extraStudent');
   var exPro=document.getElementById('extraPro');
-  function selectOcc(lv){
-    occLevels.forEach(function(x){x.classList.remove('on');});
-    lv.classList.add('on');
-    lv.querySelector('input').checked=true;
-    lv.closest('.field').classList.remove('bad');
-    var v=lv.querySelector('input').value;
-    exStu.hidden=(v!=='Student');
-    exPro.hidden=(v!=='Professional');
-  }
-  occLevels.forEach(function(lv){
-    lv.addEventListener('click', function(){ selectOcc(lv); });
-    lv.querySelector('input').addEventListener('change', function(){ selectOcc(lv); });
+  document.querySelectorAll('#occ input[name=occupation]').forEach(function(r){
+    r.addEventListener('change', function(){
+      document.getElementById('occ').closest('.field').classList.remove('bad');
+      exStu.hidden=(r.value!=='Student');
+      exPro.hidden=(r.value!=='Professional');
+    });
   });
 
-  var form=document.getElementById('regform');
+    var form=document.getElementById('regform');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var ok=true;
