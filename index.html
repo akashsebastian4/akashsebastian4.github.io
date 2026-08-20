@@ -486,7 +486,9 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 [hidden]{display:none!important}
 
 .console-bar .dots i{transition:transform .15s var(--ease),box-shadow .15s}
-.console-bar .dots i:first-child{cursor:pointer}
+.console-bar .dots i:first-child{cursor:pointer;position:relative}
+.console-bar .dots i:first-child::after{content:"\00d7";position:absolute;inset:0;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;line-height:1;color:rgba(0,0,0,.6);opacity:0;transition:opacity .12s}
+.console-bar .dots i:first-child:hover::after,.console-bar .dots i:first-child:focus-visible::after{opacity:1}
 .fact-ic{transition:transform .15s var(--ease),box-shadow .15s}
 .inp:focus{transform:translate(-2px,-2px)}
 .occ-pill span:active{transform:translate(1px,1px)}
