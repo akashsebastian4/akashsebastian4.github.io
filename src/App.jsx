@@ -6,8 +6,6 @@ import logoWhite from './assets/juspay-logo-white.svg'
 
 gsap.registerPlugin(useGSAP)
 
-const TARGETS = ['Web', 'APIs', 'iOS', 'Android', 'Agentic AI']
-
 const TICKER =
   'LIVE BUG BOUNTY // APPLICATIONS OPEN // JUSPAY SECURITY TEAM // HACK. REPORT. REPEAT. // '
 
@@ -44,30 +42,14 @@ export default function App() {
     () => {
       const mm = gsap.matchMedia()
       mm.add('(prefers-reduced-motion: no-preference)', () => {
-        // entrance — everything snaps in on a pixel grid via steps() eases
+        // one quick snap in — no drawn-out staggers
         gsap
-          .timeline({ defaults: { ease: 'steps(6)', duration: 0.45 } })
-          .from('.header', { y: -20, autoAlpha: 0 })
-          .from('.header__rule', { scaleX: 0, ease: 'steps(12)', duration: 0.5 }, '-=0.2')
-          .from('.ticker', { autoAlpha: 0, duration: 0.3 }, '<')
-          .from('.eyebrow', { x: -28, autoAlpha: 0 }, '-=0.1')
-          .from('.headline__line', { y: 44, autoAlpha: 0, stagger: 0.14 }, '<0.1')
-          .from('.hero__copy, .hero__hint', { y: 16, autoAlpha: 0, stagger: 0.1, ease: 'steps(4)' }, '-=0.1')
-          .from('.window-wrap', { y: 32, scale: 0.95, autoAlpha: 0, transformOrigin: 'top center', ease: 'steps(5)' }, '<')
-          .from('.form > *', { x: -14, autoAlpha: 0, stagger: 0.06, ease: 'steps(3)', duration: 0.3 }, '-=0.15')
+          .timeline({ defaults: { ease: 'steps(3)', duration: 0.25 } })
+          .from('.eyebrow, .headline, .hero__copy, .hero__hint', { y: 14, autoAlpha: 0, stagger: 0.04 })
+          .from('.window-wrap', { y: 14, autoAlpha: 0 }, '-=0.15')
 
         // block cursor blink
         gsap.to('.cursor', { opacity: 0, duration: 0.55, repeat: -1, yoyo: true, ease: 'steps(1)' })
-
-        // dither clusters twinkle
-        gsap.to('.dither', {
-          opacity: 0.25,
-          duration: 0.9,
-          repeat: -1,
-          yoyo: true,
-          ease: 'steps(1)',
-          stagger: { each: 0.4, from: 'random' },
-        })
 
         // ticker marquee — track holds two identical segments
         gsap.to('.ticker__track', { xPercent: -50, duration: 22, repeat: -1, ease: 'none' })
@@ -97,7 +79,7 @@ export default function App() {
   return (
     <div className="page" ref={root}>
       <header className="header">
-        <img className="header__logo" src={logo} alt="Juspay" />
+        <img className="header__logo" src={logo} alt="Juspay" width="98" height="30" fetchPriority="high" />
         <span className="header__tag">Live hacking event</span>
       </header>
       <div className="header__rule" />
@@ -185,18 +167,6 @@ export default function App() {
                     <input id="profile" name="profile" type="url" placeholder="https://hackerone.com/you" />
                   </div>
 
-                  <fieldset className="field" style={{ border: 0 }}>
-                    <legend className="field__label">What do you hunt?</legend>
-                    <div className="chips">
-                      {TARGETS.map((t) => (
-                        <label className="chip" key={t}>
-                          <input type="checkbox" name="targets" value={t} />
-                          <span>{t}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
-
                   <div className="form__cta">
                     <button className="btn" type="submit">
                       Apply now
@@ -215,7 +185,7 @@ export default function App() {
 
       <footer className="footer">
         <div className="footer__inner">
-          <img className="footer__logo" src={logoWhite} alt="Juspay" />
+          <img className="footer__logo" src={logoWhite} alt="Juspay" width="84" height="26" loading="lazy" />
           <span className="footer__sep" aria-hidden="true" />
           <span className="footer__text">Security team · Live bug bounty</span>
         </div>
