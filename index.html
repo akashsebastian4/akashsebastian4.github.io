@@ -473,6 +473,13 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .file-btn{font-family:"Silkscreen",monospace;font-size:10px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:10px 14px;border-radius:var(--r);flex:none;transition:background .15s,box-shadow .15s}
 .file-name{font-family:"JetBrains Mono",monospace;font-size:12px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .field.bad .file-btn{box-shadow:0 0 0 3px rgba(255,92,92,.55)}
+@keyframes condIn{from{opacity:0;transform:translateY(8px)}}
+#condStudent:not([hidden]),#condPro:not([hidden]){animation:condIn .25s var(--ease)}
+.form-body.cond-open .field{margin-bottom:9px}
+.form-body.cond-open .inp{padding:10px 12px}
+.form-body.cond-open textarea.inp{min-height:40px}
+.form-body.cond-open .step-desc{margin:0 0 10px}
+.form-body.cond-open .form-nav{margin-top:10px}
 .form-status{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--err);text-align:center;margin:2px 0 0;line-height:1.6}
 .form-status a{color:var(--err);font-weight:700}
 
@@ -1055,10 +1062,12 @@ select.inp{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=
     var v=c?c.value:'';
     condStudent.hidden=(v!=='Student');
     condPro.hidden=(v!=='Working Professional');
+    document.getElementById('regform').classList.toggle('cond-open', v==='Student'||v==='Working Professional');
   }
   document.querySelectorAll('#occ input[name=occupation]').forEach(function(r){
     r.addEventListener('change', function(){ occField.classList.remove('bad'); syncOcc(); });
   });
+  syncOcc();
   var resumeInput=document.getElementById('f-resume');
   var resumeName=document.getElementById('resumeName');
   var MAX_RESUME=5*1024*1024;
